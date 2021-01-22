@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.faculties-container {
+    width: 700px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: start;
+}
+
+.medicine, .mef, .psychology {
+    margin-top: -15px;
+}
+
+.faculty {
+    display: flex;
+    flex-wrap: wrap;
+    width: 150px;
+    background-color: darkgray;
+    height: 150px;
+    border-radius: 150px;
+    align-items: center;
+}
+
+.faculty-name, .faculty-labs {
+    width: 100%;
+    text-align: center;
+    height: fit-content;
+    color: white;
+}
+
+.faculty-name {
+    margin-top: 15px;
+}
+
+.mef .faculty-name {
+    margin-top: 0;
+}
+
+.faculty-labs {
+    font-size: 35px;
+}
+
+.communication {
+    background-color: #818990;
+    border: #818990 solid 1px;
+}
+
+.eicea {
+    background-color: #FF9900;
+    border: #FF9900 solid 1px;
+}
+
+.engineering {
+    background-color: #936D47;
+    border: #936D47 solid 1px;
+}
+
+.living-lab {
+    background-color: #192A67;
+    border: #192A67 solid 1px;
+}
+
+.medicine {
+    background-color: #FFD91C;
+    border: #FFD91C solid 1px;
+}
+
+.mef {
+    background-color: #D0D3D4;
+    border: #D0D3D4 solid 1px;
+}
+
+.psychology {
+    background-color: #753BBD;
+    border: #753BBD solid 1px;
+}
+
+.total-labs {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin: 0 auto;
+    width: 700px;
+    font-size: 30px;
+}
+
+.number {
+    font-size: 250px;
+    letter-spacing: 2px;
+}
+
+.faculty-header {
+    display: flex;
+    width: 90%;
+    align-items: center;
+    height: 100px;
+    color: white;
+    margin: 0 auto;
+}
+
+.faculty-header-name {
+    width: 25%;
+    border-right: 1.5px solid white;
+    font-size: 40px;
+}
+
+.faculty-header-content {
+    display: flex;
+    justify-content: space-evenly;
+    width: 75%;
+}
+
+.content, .faculty-header-name {
+    text-align: center;
+}
+
+.quantity {
+    font-size: 28px;
+}
+
+.faculty-spaces {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 90%;
+    margin: 2% auto;
+}
+
+.space {
+    width: 23%;
+    height: 300px;
+    border: 2px solid gray;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px 0;
+    overflow: visible;
+    margin-bottom: 15px;
+}
+
+.space-title, .space-subtitle {
+    width: 100%;
+    text-align: center;
+}
+
+.space-title {
+    text-decoration: underline;
+    font-size: 23px;
+    min-height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.space-info {
+    display: flex;
+    width: 95%;
+    margin: 0 auto;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.location, .area {
+    width: 48%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.location-icon {
+    width: 15px;
+    margin-right: 5px;
+}
+
+.division {
+    width: 2px;
+    background-color: black;
+    height: 30%;
+    margin: auto 0;
+}
+
+.capacity {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-top: 2px solid;
+}
+
+.capacity p {
+    width: 100%;
+    text-align: center;
+}
+
+.normal, .actual {
+    width: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    font-size: 12px;
+}
+
+.normal span, .actual span {
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+}
+
+li{
+    list-style: none;
+}
+
+.more{
+    width: 90%;
+    overflow: hidden;
+}
+.item{
+    border: #192A67;
+    overflow: hidden;
+}
+.btn{
+    display: block;
+    position: relative;
+    text-align: center;
+    margin: 5px auto;
+}
+.more-info{
+    overflow: hidden;
+    max-height: 0;
+    background-color: gray;
+    border: 2px solid gray;
+}
+.more-info a{
+    display: block;
+    padding: 16px 26px;
+    font-size: 14px;
+    margin: 4px;
+    text-align: center;
+    position: relative;
+}
+.more-info a::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+.more-info a:hover::before{
+    opacity: 0;
+}
+.item:hover .more-info{
+    max-height: fit-content;
+    overflow: visible;
+    border-radius: 5px;
+    margin: 9px 0 0 ;
+    padding-bottom: 5px;
+    transition-duration: 1000ms;
+}
+.classification{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-top: 2px solid;
+    padding: 7px 0;
+}
+.classification-text, .classification-level{
+    width: 50%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.description{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 14px;
+}
+.description span{
+    text-decoration: underline;
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
