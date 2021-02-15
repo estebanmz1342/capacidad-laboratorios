@@ -18,27 +18,41 @@ body {
     align-items: start;
 }
 
-.medicine, .mef, .psychology {
-    margin-top: -15px;
+.faculty-level-one, .faculty-level-two, .faculty-level-three{
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
 }
-
+.faculty-level-two{
+    align-items: center;
+}
 .faculty {
     display: flex;
     flex-wrap: wrap;
-    width: 150px;
+    width: 175px;
     background-color: darkgray;
-    height: 150px;
-    border-radius: 150px;
+    height: 175px;
+    border-radius: 175px;
     align-items: center;
+    position: relative;
 }
-
+.labs-quantity{
+    width: 350px;
+    height: 350px;
+    border-radius: 350px;
+    border-style: groove;
+}
 .faculty-name, .faculty-labs {
     width: 100%;
     text-align: center;
     height: fit-content;
     color: white;
 }
-
+.labs-quantity .faculty-name{
+    margin: 0;
+    font-size: 2.3em;
+}
 .faculty-name {
     margin-top: 15px;
 }
@@ -54,36 +68,49 @@ body {
 .communication {
     background-color: #818990;
     border: #818990 solid 1px;
+    right: -15px;
+    top: -15px;
 }
 
 .eicea {
     background-color: #FF9900;
     border: #FF9900 solid 1px;
+    right: -85px;
+    bottom: -30px;
 }
 
 .engineering {
     background-color: #936D47;
     border: #936D47 solid 1px;
+    left: -15px;
+    top: -15px;
 }
 
 .living-lab {
     background-color: #192A67;
     border: #192A67 solid 1px;
+    bottom: -50px;
 }
 
 .medicine {
     background-color: #FFD91C;
     border: #FFD91C solid 1px;
+    right: -30px;
+    bottom: -20px;
+
 }
 
 .mef {
     background-color: #D0D3D4;
     border: #D0D3D4 solid 1px;
+    right: -30px;
 }
 
 .psychology {
     background-color: #753BBD;
     border: #753BBD solid 1px;
+    right: -95px;
+    top: -35px;
 }
 
 .total-labs {
