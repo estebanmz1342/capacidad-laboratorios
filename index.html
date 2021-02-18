@@ -11,13 +11,12 @@
         }
 
         function hideContent() {
-            window.scrollTo(0,0);
+            window.scrollTo(0, 0);
             document.getElementById('button-up').style.display = 'none';
             let facElements = document.getElementsByClassName("faculty-info");
-            for (let i = 0; i < facElements.length; i++){
+            for (let i = 0; i < facElements.length; i++) {
                 facElements[i].style['display'] = 'none';
             }
-
         }
     </script>
 </head>
@@ -26,56 +25,64 @@
 
     <div class="faculties-container">
         <div class="faculty-level-one">
-            <a href="#prueba">
-                <div class="faculty communication" onclick="showContent('prueba')">
+            <a href="#contentCommunication">
+                <div class="faculty communication" onclick="showContent('contentCommunication')">
                     <div class="faculty-name ">Comunicación</div>
                     <div class="faculty-labs">40</div>
                 </div>
             </a>
-            <div class="faculty eicea">
-                <div class="faculty-name">EICEA</div>
-                <div class="faculty-labs">14</div>
-            </div>
+            <a href="#contentEICEA">
+                <div class="faculty eicea" onclick="showContent('contentEICEA')">
+                    <div class="faculty-name">EICEA</div>
+                    <div class="faculty-labs">14</div>
+                </div>
+            </a>
         </div>
         <div class="faculty-level-two">
             <div>
-                <div class="faculty engineering">
-                    <div class="faculty-name">Ingeniería</div>
-                    <div class="faculty-labs">48</div>
-                </div>
-                <div class="faculty living-lab">
-                    <div class="faculty-name">Living Lab</div>
-                    <div class="faculty-labs">4</div>
-                </div>
+                <a href="#contentEngineering">
+                    <div class="faculty engineering" onclick="showContent('contentEngineering')">
+                        <div class="faculty-name">Ingeniería</div>
+                        <div class="faculty-labs">48</div>
+                    </div>
+                </a>
+                <a href="#contentLivingLab">
+                    <div class="faculty living-lab" onclick="showContent('contentLivingLab')">
+                        <div class="faculty-name">Living Lab</div>
+                        <div class="faculty-labs">4</div>
+                    </div>
+                </a>
             </div>
             <div class="faculty labs-quantity">
-                <img class="floating-arrow arrow1" src="./Recurso%201.png" alt="arrow">
-                <img class="floating-arrow arrow2" src="./Recurso%201.png" alt="arrow">
-                <img class="floating-arrow arrow3" src="./Recurso%201.png" alt="arrow">
-                <img class="floating-arrow arrow4" src="./Recurso%201.png" alt="arrow">
                 <div class="faculty-name">148<br>LABORATORIOS</div>
             </div>
-            <div class="faculty mef">
-                <div class="faculty-name">Medicina</div>
-                <div class="faculty-labs">23</div>
-                <div class="faculty-name">Enfermería<br>Fisioterapia</div>
-            </div>
+            <a href="#contentMEF">
+                <div class="faculty mef" onclick="showContent('contentMEF')">
+                    <div class="faculty-name">Medicina</div>
+                    <div class="faculty-labs">23</div>
+                    <div class="faculty-name">Enfermería<br>Fisioterapia</div>
+                </div>
+            </a>
         </div>
         <div class="faculty-level-three">
-            <div class="faculty medicine">
-                <div class="faculty-name">Medicina</div>
-                <div class="faculty-labs">26</div>
-            </div>
-            <div class="faculty psychology">
-                <div class="faculty-name">Psicología</div>
-                <div class="faculty-labs">13</div>
-            </div>
+            <a href="#contentMedicine">
+                <div class="faculty medicine" onclick="showContent('contentMedicine')">
+                    <div class="faculty-name">Medicina</div>
+                    <div class="faculty-labs">26</div>
+                </div>
+            </a>
+            <a href="#contentPsychology">
+                <div class="faculty psychology" onclick="showContent('contentPsychology')">
+                    <div class="faculty-name">Psicología</div>
+                    <div class="faculty-labs">13</div>
+                </div>
+            </a>
         </div>
     </div>
     <div class="total-labs">
         <span class="number">168 </span>ESPACIOS DE LABORATORIOS
     </div>
-    <div class="faculty-info" id="prueba">
+    <div class="faculty-info" id="contentCommunication">
         <div class="faculty-header communication">
             <div class="faculty-header-name ">Comunicación</div>
             <div class="faculty-header-content">
@@ -104,7 +111,7 @@
                     </div>
                     <div class="division"></div>
                     <div class="area">
-                        <p>84 m^2</p>
+                        <p>83 m<sup>2</sup></p>
                     </div>
                     <div class="capacity">
                         <p>Capacidad máxima</p>
@@ -127,6 +134,64 @@
                             <div class="classification">
                                 <div class="classification-text">Clasificación General</div>
                                 <div class="classification-level">II-SECO</div>
+                            </div>
+                            <div class="classification">
+                                <div class="classification-text">Tratamiento de sustancias químicas</div>
+                                <div class="classification-level">NO</div>
+                            </div>
+                            <div class="classification">
+                                <div class="classification-text">Funciones Sustantivas</div>
+                                <div class="classification-level">Docencia<br>Extensión<br>Proyección social</div>
+                            </div>
+                            <div class="description">
+                                <span>Descripción</span> El estudio de fotografía, de 83 metros cuadrados, cuenta con telones, mesas de luz, luces y flashes Elinchrom, y cámaras profesionales de fotografía. En este espacio se llevan a cabo sesiones de fotografía publicitaria y de alimentos, de retrato y de composición.
+                                El estudio tiene su propia dotación de luces led y cámaras Sony 4K que le permiten ser un segundo de televisión.
+                            </div>
+                        </div>
+                    </li>
+                </div>
+            </div>
+            <div class="space">
+                <p class="space-title">Estudio de Radio</p>
+                <p class="space-subtitle">Áula especializada</p>
+                <div class="space-info">
+                    <div class="location">
+                        <img class="location-icon" src="./Pin-location-point_icon-icons.com_51943.png" alt="imagne">
+                        <p>Edificio K <span><br>Piso 3</span></p>
+                    </div>
+                    <div class="division"></div>
+                    <div class="area">
+                        <p>46 m<sup>2</sup></p>
+                    </div>
+                    <div class="capacity">
+                        <p>Capacidad máxima</p>
+                        <div class="normal"><span>21</span>Normalidad</div>
+                        <div class="actual"><span>21</span>Actualidad</div>
+                    </div>
+                </div>
+                <div class="more">
+                    <li class="item" id="ae1">
+                        <a href="#ae1" class="btn">Más...</a>
+                        <div class="more-info">
+                            <div class="classification">
+                                <div class="classification-text">Clasificacion de Bioseguridad</div>
+                                <div class="classification-level">BSL 1</div>
+                            </div>
+                            <div class="classification">
+                                <div class="classification-text">Responsable</div>
+                                <div class="classification-level">Richard Enrique Torres Pinzón</div>
+                            </div>
+                            <div class="classification">
+                                <div class="classification-text">Clasificación General</div>
+                                <div class="classification-level">II-SECO</div>
+                            </div>
+                            <div class="classification">
+                                <div class="classification-text">Tratamiento de sustancias químicas</div>
+                                <div class="classification-level">NO</div>
+                            </div>
+                            <div class="classification">
+                                <div class="classification-text">Funciones Sustantivas</div>
+                                <div class="classification-level sustantive-functions">Docencia<br>Extensión<br>Proyección social</div>
                             </div>
                             <div class="description">
                                 <span>Descripción</span> Almacenamiento de escenografía y productos para producción
@@ -280,7 +345,7 @@
 
         </div>
     </div>
-    <div class="faculty-info">
+    <div class="faculty-info" id="contentEICEA">
         <div class="faculty-header eicea">
             <div class="faculty-header-name ">EICEA</div>
             <div class="faculty-header-content">
@@ -295,7 +360,7 @@
             </div>
         </div>
     </div>
-    <div class="faculty-info">
+    <div class="faculty-info" id="contentEngineering">
         <div class="faculty-header engineering">
             <div class="faculty-header-name ">Ingeniería</div>
             <div class="faculty-header-content">
@@ -310,6 +375,70 @@
                 <div class="content">
                     <div class="subtitle">Área de soporte</div>
                     <div class="quantity">4</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="faculty-info" id="contentLivingLab">
+        <div class="faculty-header living-lab">
+            <div class="faculty-header-name ">Living Lab</div>
+            <div class="faculty-header-content">
+                <div class="content">
+                    <div class="subtitle">Laboratorio</div>
+                    <div class="quantity">4</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="faculty-info" id="contentMedicine">
+        <div class="faculty-header medicine">
+            <div class="faculty-header-name ">Medicina</div>
+            <div class="faculty-header-content">
+                <div class="content">
+                    <div class="subtitle">Aula</div>
+                    <div class="quantity">1</div>
+                </div>
+                <div class="content">
+                    <div class="subtitle">Laboratorio</div>
+                    <div class="quantity">15</div>
+                </div>
+                <div class="content">
+                    <div class="subtitle">Área de soporte</div>
+                    <div class="quantity">10</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="faculty-info" id="contentPsychology">
+        <div class="faculty-header psychology">
+            <div class="faculty-header-name ">Psicología</div>
+            <div class="faculty-header-content">
+                <div class="content">
+                    <div class="subtitle">Aula especializada</div>
+                    <div class="quantity">1</div>
+                </div>
+                <div class="content">
+                    <div class="subtitle">Laboratorio</div>
+                    <div class="quantity">10</div>
+                </div>
+                <div class="content">
+                    <div class="subtitle">Área de soporte</div>
+                    <div class="quantity">2</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="faculty-info" id="contentMEF">
+        <div class="faculty-header mef">
+            <div class="faculty-header-name ">Medicina<br>Enfermería<br>Fisioterapia</div>
+            <div class="faculty-header-content">
+                <div class="content">
+                    <div class="subtitle">Laboratorio</div>
+                    <div class="quantity">6</div>
+                </div>
+                <div class="content">
+                    <div class="subtitle">SABER BIEN EL NOMBRE</div>
+                    <div class="quantity">17</div>
                 </div>
             </div>
         </div>

@@ -22,9 +22,11 @@ a{
     height: 35px;
     background-color: black;
     color: white;
+    position: sticky;
 }
 #button-up{
     display: none;
+
 }
 .faculties-container {
     width: 700px;
@@ -72,29 +74,7 @@ a{
     font-size: 2.3em;
     color: black;
 }
-.floating-arrow{
-    width: 150px;
-    position: absolute;
-}
-.arrow1{
-    top: -10px;
-    transform: rotate(-18deg);
-}
-.arrow2{
-    top: 15px;
-    right: -25px;
-    transform: rotate(65deg);
-}
-.arrow3{
-    bottom: 10px;
-    right: -25px;
-    transform: rotate(150deg);
-}
-.arrow4{
-    bottom: 40px;
-    left: -48px;
-    transform: rotate(254deg);
-}
+
 .faculty-name {
     margin-top: 15px;
 }
@@ -299,6 +279,7 @@ li{
 .more{
     width: 90%;
     overflow: hidden;
+    z-index: 3;
 }
 .item{
     border: #192A67;
@@ -348,17 +329,21 @@ li{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
     border-top: 2px solid;
     padding: 7px 0;
 }
+.sustantive-functions{
+    font-size: 13px;
+}
 .classification-text, .classification-level{
-    width: 50%;
+    width: 40%;
     display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
 }
+
 .description{
     width: 100%;
     text-align: center;
