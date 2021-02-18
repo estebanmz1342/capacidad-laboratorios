@@ -4,15 +4,34 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./style.css">
     <title>Pruebas</title>
+    <script>
+        function showContent(i) {
+            document.getElementById(i).style.display = 'block';
+            document.getElementById('button-up').style.display = 'block';
+        }
+
+        function hideContent() {
+            window.scrollTo(0,0);
+            document.getElementById('button-up').style.display = 'none';
+            let facElements = document.getElementsByClassName("faculty-info");
+            for (let i = 0; i < facElements.length; i++){
+                facElements[i].style['display'] = 'none';
+            }
+
+        }
+    </script>
 </head>
 <body>
-<div class="container">
+<div class="container" id="top-page">
+
     <div class="faculties-container">
         <div class="faculty-level-one">
-            <div class="faculty communication">
-                <div class="faculty-name ">Comunicación</div>
-                <div class="faculty-labs">40</div>
-            </div>
+            <a href="#prueba">
+                <div class="faculty communication" onclick="showContent('prueba')">
+                    <div class="faculty-name ">Comunicación</div>
+                    <div class="faculty-labs">40</div>
+                </div>
+            </a>
             <div class="faculty eicea">
                 <div class="faculty-name">EICEA</div>
                 <div class="faculty-labs">14</div>
@@ -56,7 +75,7 @@
     <div class="total-labs">
         <span class="number">168 </span>ESPACIOS DE LABORATORIOS
     </div>
-    <div class="faculty-info">
+    <div class="faculty-info" id="prueba">
         <div class="faculty-header communication">
             <div class="faculty-header-name ">Comunicación</div>
             <div class="faculty-header-content">
@@ -297,6 +316,8 @@
     </div>
 
 </div>
-
+<div class="home-button" onclick="hideContent()">
+    <button id="button-up">SUBIR</button>
+</div>
 </body>
 </html>
