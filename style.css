@@ -277,7 +277,7 @@ li{
 }
 
 .more{
-    width: 90%;
+    width: 95%;
     overflow: hidden;
     z-index: 3;
 }
@@ -322,7 +322,7 @@ li{
     border-radius: 5px;
     margin: 9px 0 0 ;
     padding-bottom: 5px;
-    transition-duration: 1000ms;
+    transition-duration: 1500ms;
     z-index: 3;
 }
 .classification{
@@ -333,7 +333,7 @@ li{
     border-top: 2px solid;
     padding: 7px 0;
 }
-.sustantive-functions{
+.substantive-functions{
     font-size: 13px;
 }
 .classification-text, .classification-level{
@@ -345,7 +345,8 @@ li{
 }
 
 .description{
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
     text-align: center;
     display: flex;
     flex-wrap: wrap;
