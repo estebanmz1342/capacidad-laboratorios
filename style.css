@@ -7,6 +7,22 @@ a{
     text-decoration: none;
 }
 
+/*JUST FOR FUN*/
+.gifs{
+    width: 302px;
+    height: 302px;
+    content: "";
+    background: url("spinning-arrows.gif");
+    background-size: 302px 302px;
+}
+.gifs2{
+    width: 800px;
+    height: 800px;
+    content: "";
+    background: url("source.gif");
+    background-size: 800px 800px;
+}
+/*end*/
 .container {
     width: 90%;
     margin: 0 auto;
@@ -49,17 +65,17 @@ a{
 .faculty {
     display: flex;
     flex-wrap: wrap;
-    width: 175px;
+    width: 130px;
     background-color: darkgray;
-    height: 175px;
-    border-radius: 175px;
+    height: 130px;
+    border-radius: 130px;
     align-items: center;
     position: relative;
 }
 .labs-quantity{
-    width: 350px;
-    height: 350px;
-    border-radius: 350px;
+    width: 275px;
+    height: 275px;
+    border-radius: 275px;
     /background: radial-gradient(circle, rgba(255,255,255,1) 91%, rgba(169,169,169,1) 100%);
     background-color: grey;
 }
@@ -71,7 +87,7 @@ a{
 }
 .labs-quantity .faculty-name{
     margin: 0;
-    font-size: 2.3em;
+    font-size: 1.7em;
     color: black;
 }
 
@@ -85,6 +101,7 @@ a{
 
 .faculty-labs {
     font-size: 35px;
+    margin-top: -15px;
 }
 
 .communication {
@@ -104,8 +121,8 @@ a{
 .engineering {
     background-color: #936D47;
     border: #936D47 solid 1px;
-    left: -15px;
-    top: -15px;
+    left: -25px;
+    top: -25px;
 }
 
 .living-lab {
@@ -126,6 +143,15 @@ a{
     background-color: #D0D3D4;
     border: #D0D3D4 solid 1px;
     right: -30px;
+}
+.faculty.mef :nth-child(1) {
+    margin: 5px 0 0 0;
+}
+.faculty.mef :nth-child(2) {
+    margin: -25px 0 0 0;
+}
+.faculty.mef :nth-child(3) {
+    margin: -23px 0 0 0;
 }
 
 .psychology {
@@ -231,6 +257,10 @@ a{
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+.location p{
+    min-height: 38px;
+    vertical-align: center;
 }
 
 .location-icon {
