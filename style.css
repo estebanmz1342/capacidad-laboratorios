@@ -22,10 +22,57 @@ a{
     background: url("source.gif");
     background-size: 800px 800px;
 }
+
+.arrow {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+}
+.circle {
+    position: absolute;
+    box-sizing: border-box;
+    height: 300px;
+    width: 300px;
+    border: 25px solid #192a67;
+    border-radius: 50%;
+    -webkit-clip-path: inset(0 40% 0 0);
+    clip-path: inset(0 40% 0 0);
+}
+.triangle {
+    position: absolute;
+    width: 70px;
+    height: 50px;
+    background: #192a67;
+    margin-top: -10px;
+    margin-left: 140px;
+    -webkit-clip-path: polygon(50% 0, 0% 100%, 100% 100%);
+    clip-path: polygon(50% 0, 0% 100%, 100% 100%);
+    -moz-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+.arrow:hover {
+    -webkit-transform: rotate(720deg);
+    -ms-transform: rotate(720deg);
+    transform: rotate(720deg);
+    transition: all 1.2s ease-in-out;
+}
 /*end*/
-.container {
+.container, .header-info {
     width: 90%;
     margin: 0 auto;
+}
+.header-info{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.header-info p{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 35px;
 }
 .home-button{
     display: flex;
@@ -71,13 +118,22 @@ a{
     border-radius: 130px;
     align-items: center;
     position: relative;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+}
+.faculty:hover, .faculty:focus, .faculty:active{
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    cursor: pointer;
 }
 .labs-quantity{
     width: 275px;
     height: 275px;
     border-radius: 275px;
     /background: radial-gradient(circle, rgba(255,255,255,1) 91%, rgba(169,169,169,1) 100%);
-    background-color: grey;
+    background-color: #F9F8FF;
 }
 .faculty-name, .faculty-labs {
     width: 100%;
@@ -141,8 +197,17 @@ a{
 
 .mef {
     background-color: #D0D3D4;
-    border: #D0D3D4 solid 1px;
-    right: -30px;
+    border: #FFD91C solid 3px;
+    right: -2px;
+    top: 2px;
+}
+.mef2{
+    position: relative;
+    right: -28px;
+    width: 140px;
+    background-color: #753BBD;
+    height: 140px;
+    border-radius: 140px;
 }
 .faculty.mef :nth-child(1) {
     margin: 5px 0 0 0;
@@ -182,6 +247,10 @@ a{
     height: 100px;
     color: white;
     margin: 0 auto;
+}
+.faculty-header.mef .faculty-header-name{
+    font-size: 28px;
+    line-height: 28px;
 }
 .faculty-info{
     display: none;
@@ -309,11 +378,12 @@ li{
 .more{
     width: 95%;
     overflow: hidden;
-    z-index: 3;
+    z-index: 0;
 }
 .item{
     border: #192A67;
     overflow: hidden;
+    z-index: 2;
 }
 .btn{
     display: block;
@@ -324,36 +394,19 @@ li{
 .more-info{
     overflow: hidden;
     max-height: 0;
-    background-color: gray;
+    background-color: white;
     border: 2px solid gray;
+    z-index: 0 !important;
 }
-.more-info a{
-    display: block;
-    padding: 16px 26px;
-    font-size: 14px;
-    margin: 4px;
-    text-align: center;
-    position: relative;
-}
-.more-info a::before{
-    content: "";
-    position: absolute;
-    height: 100%;
-    left: 0;
-    top: 0;
-    opacity: 0;
-}
-.more-info a:hover::before{
-    opacity: 0;
-}
+
 .item:hover .more-info{
     max-height: fit-content;
     overflow: visible;
     border-radius: 5px;
     margin: 9px 0 0 ;
     padding-bottom: 5px;
-    transition-duration: 1500ms;
-    z-index: 3;
+    transition-duration: 0.3ms;
+    z-index: 4;
 }
 .classification{
     width: 100%;

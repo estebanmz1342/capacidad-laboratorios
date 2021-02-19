@@ -7,11 +7,12 @@
     <script>
         function showContent(i) {
             document.getElementById(i).style.display = 'block';
+            document.getElementById(i).scrollIntoView({behavior: 'smooth'});
             document.getElementById('button-up').style.display = 'block';
         }
 
         function hideContent() {
-            window.scrollTo(0, 0);
+            document.getElementById('top-page').scrollIntoView({behavior: 'smooth'});
             document.getElementById('button-up').style.display = 'none';
             let facElements = document.getElementsByClassName("faculty-info");
             for (let i = 0; i < facElements.length; i++) {
@@ -22,61 +23,55 @@
 </head>
 <body>
 <div class="container" id="top-page">
-
+    <div class="header-info">
+        <h2>CAPACIDAD INSTALADA DE LABORATORIOS</h2>
+        <p>Para obtener más información de cada unidad académica, hazle click encima.</p>
+    </div>
     <div class="faculties-container">
         <div class="faculty-level-one">
-            <a href="#contentCommunication">
-                <div class="faculty communication" onclick="showContent('contentCommunication')">
-                    <div class="faculty-name ">Comunicación</div>
-                    <div class="faculty-labs">40</div>
-                </div>
-            </a>
-            <a href="#contentEICEA">
-                <div class="faculty eicea" onclick="showContent('contentEICEA')">
-                    <div class="faculty-name">EICEA</div>
-                    <div class="faculty-labs">14</div>
-                </div>
-            </a>
+            <div class="faculty communication" onclick="showContent('contentCommunication')">
+                <div class="faculty-name ">Comunicación</div>
+                <div class="faculty-labs">40</div>
+            </div>
+            <div class="faculty eicea" onclick="showContent('contentEICEA')">
+                <div class="faculty-name">EICEA</div>
+                <div class="faculty-labs">14</div>
+            </div>
         </div>
         <div class="faculty-level-two">
             <div>
-                <a href="#contentEngineering">
-                    <div class="faculty engineering" onclick="showContent('contentEngineering')">
-                        <div class="faculty-name">Ingeniería</div>
-                        <div class="faculty-labs">48</div>
-                    </div>
-                </a>
-                <a href="#contentLivingLab">
-                    <div class="faculty living-lab" onclick="showContent('contentLivingLab')">
-                        <div class="faculty-name">Living Lab</div>
-                        <div class="faculty-labs">4</div>
-                    </div>
-                </a>
+                <div class="faculty engineering" onclick="showContent('contentEngineering')">
+                    <div class="faculty-name">Ingeniería</div>
+                    <div class="faculty-labs">48</div>
+                </div>
+                <div class="faculty living-lab" onclick="showContent('contentLivingLab')">
+                    <div class="faculty-name">Living Lab</div>
+                    <div class="faculty-labs">4</div>
+                </div>
             </div>
             <div class="faculty labs-quantity">
                 <div class="faculty-name">148<br>LABORATORIOS</div>
             </div>
-            <a href="#contentMEF">
-                <div class="faculty mef" onclick="showContent('contentMEF')">
-                    <div class="faculty-name">Medicina</div>
-                    <div class="faculty-labs">23</div>
-                    <div class="faculty-name">Enfermería<br>Fisioterapia</div>
-                </div>
-            </a>
+            <div class="arrow">
+                <div class="circle"></div>
+                <div class="triangle"></div>
+            </div>
+            <div class="mef2">
+            <div class="faculty mef" onclick="showContent('contentMEF')">
+                <div class="faculty-name">Medicina</div>
+                <div class="faculty-labs">23</div>
+                <div class="faculty-name">Enfermería<br>Fisioterapia</div>
+            </div></div>
         </div>
         <div class="faculty-level-three">
-            <a href="#contentMedicine">
-                <div class="faculty medicine" onclick="showContent('contentMedicine')">
-                    <div class="faculty-name">Medicina</div>
-                    <div class="faculty-labs">26</div>
-                </div>
-            </a>
-            <a href="#contentPsychology">
-                <div class="faculty psychology" onclick="showContent('contentPsychology')">
-                    <div class="faculty-name">Psicología</div>
-                    <div class="faculty-labs">13</div>
-                </div>
-            </a>
+            <div class="faculty medicine" onclick="showContent('contentMedicine')">
+                <div class="faculty-name">Medicina</div>
+                <div class="faculty-labs">26</div>
+            </div>
+            <div class="faculty psychology" onclick="showContent('contentPsychology')">
+                <div class="faculty-name">Psicología</div>
+                <div class="faculty-labs">13</div>
+            </div>
         </div>
     </div>
     <div class="total-labs">
@@ -9216,16 +9211,6 @@
     </div>
 
 </div>
-<div>
-<span class="arrow arrow-animate">
-  <span class="arrow-item"><span class="curve"></span></span>
-  <i></i>
-  <span class="arrow-item"><span class="curve"></span></span>
-</span>
-</div>
-<div class="gifs">
-</div>
-<div class="gifs2"></div>
 <div class="home-button" onclick="hideContent()">
     <button id="button-up">SUBIR</button>
 </div>
