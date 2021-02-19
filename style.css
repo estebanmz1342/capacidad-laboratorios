@@ -81,16 +81,36 @@ a{
     top: 0;
 }
 .home-button button{
-    width: 65px;
-    height: 35px;
+    width: 85px;
+    height: 65px;
     background-color: black;
     color: white;
     position: sticky;
+    font-size: 45px;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: color, background-color;
+    transition-property: color, background-color;
+}
+.home-button button img{
+    width: 85px;
+    height: 65px;
+    position: relative;
+    left: -8px;
+}
+.home-button button img:focus, button:focus{
+    outline: none;
 }
 #button-up{
     display: none;
-
 }
+
+.home-button button:hover, .home-button button:focus, .home-button button:active {
+    background-color: #2098D1;
+    color: white;
+    cursor: pointer;
+}
+
 .faculties-container {
     width: 700px;
     display: flex;
@@ -230,9 +250,10 @@ a{
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
+    justify-content: center;
     margin: 0 auto;
     width: 700px;
-    font-size: 30px;
+    font-size: 35px;
 }
 
 .number {
@@ -269,6 +290,25 @@ a{
 
 .content, .faculty-header-name {
     text-align: center;
+}
+.innovation-text{
+    text-align: center;
+    font-size: 23px;
+    margin: 5px 0 5px;
+}
+.underline{
+    width: 50%;
+    margin: 0 auto;
+    border-bottom: 3px solid black;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow;
+    transition-property: box-shadow;
+}
+
+.underline:hover, .underline:focus, .underline:active {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 }
 
 .quantity {
