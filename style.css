@@ -6,6 +6,36 @@ body {
 a{
     text-decoration: none;
 }
+@media (max-width: 1200px) {
+    .identity-logos{
+        display: none !important;
+    }
+    .identity-logos-mobile{
+        display: flex !important;
+        flex-wrap: wrap;
+        width: 80%;
+        margin: 0 auto;
+        justify-content: center;
+    }
+    .identity-logos-mobile img{
+        width: 350px;
+    }
+}
+.identity-logos-mobile{
+    display: none;
+}
+.identity-logos{
+    position: absolute;
+    top: 100px;
+    left: 8vw;
+    display: flex;
+    flex-wrap: wrap;
+    width: 200px;
+    justify-content: center;
+}
+.identity-logos img{
+    width: 350px;
+}
 
 /*JUST FOR FUN*/
 .gifs{
@@ -245,20 +275,44 @@ a{
     right: -95px;
     top: -35px;
 }
-
-.total-labs {
+.total-labs{
     display: flex;
     flex-wrap: nowrap;
+    justify-content: center;
+    width: 850px;
+    font-size: 35px;
+    margin: 20px auto 0;
+    padding: 15px 0;
+
+}
+.total-labs-right, .total-labs-left {
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    margin: 0 auto;
-    width: 700px;
-    font-size: 35px;
+    text-align: center;
+    width: 50%;
 }
-
+.total-labs-left{
+    border-right: 2px black solid;
+    width: 45%;
+    margin-right: -15px;
+}
 .number {
-    font-size: 250px;
+    font-size: 135px;
     letter-spacing: 2px;
+    text-align: center;
+}
+.quantity-labs-description{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+}
+.quantity-labs-description .number{
+    font-size: 45px;
+    letter-spacing: -1px;
+    margin-right: 10px;
 }
 
 .faculty-header {
