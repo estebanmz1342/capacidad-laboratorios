@@ -30,11 +30,14 @@ a{
     left: 8vw;
     display: flex;
     flex-wrap: wrap;
-    width: 200px;
+    width: 300px;
     justify-content: center;
 }
 .identity-logos img{
     width: 350px;
+}
+.identity-logos p{
+    text-align: center;
 }
 
 /*JUST FOR FUN*/
@@ -293,10 +296,14 @@ a{
     text-align: center;
     width: 50%;
 }
+.total-labs-right{
+    justify-content: flex-start;
+    padding-left: 25px;
+}
 .total-labs-left{
     border-right: 2px black solid;
     width: 45%;
-    margin-right: -15px;
+    /margin-right: -15px;
 }
 .number {
     font-size: 135px;
@@ -305,7 +312,7 @@ a{
 }
 .quantity-labs-description{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     font-size: 22px;
 }
