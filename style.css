@@ -6,7 +6,7 @@ body {
 a{
     text-decoration: none;
 }
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
     .identity-logos{
         display: none !important;
     }
@@ -18,7 +18,7 @@ a{
         justify-content: center;
     }
     .identity-logos-mobile img{
-        width: 350px;
+        width: 80%;
     }
 }
 .identity-logos-mobile{
