@@ -6,6 +6,14 @@ body {
 a{
     text-decoration: none;
 }
+@media (min-width: 250px) and (max-width: 768px){
+    .faculty-spaces .space{
+        width: 45% !important;
+    }
+    .container{
+        width: 100%;
+    }
+}
 @media (max-width: 1400px) {
     .identity-logos{
         display: none !important;
@@ -39,6 +47,7 @@ a{
 .identity-logos p{
     text-align: center;
 }
+
 
 /*JUST FOR FUN*/
 .gifs{
@@ -387,7 +396,7 @@ a{
 
 .space {
     width: 23%;
-    height: 300px;
+    height: fit-content;
     border: 2px solid gray;
     border-radius: 15px;
     display: flex;
@@ -492,6 +501,14 @@ li{
     border: 2px solid gray;
 /*z-index: 0 !important;*/
 }
+.mas-info a, .mas-info a:visited{
+    text-decoration: none !important;
+    color: #192A67 !important;
+}
+.mas-info{
+    margin: 5px 0;
+}
+
 
 .item:hover .more-info{
     max-height: fit-content;
@@ -542,6 +559,10 @@ li{
 .popup .more-info1 {
     max-height: 30%;
     overflow: auto;
+}
+.popup .space-title{
+    width: 80%;
+    margin: 0 auto;
 }
 .classification{
     width: 100%;
