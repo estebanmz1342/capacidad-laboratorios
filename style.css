@@ -6,15 +6,35 @@ body {
 a{
     text-decoration: none;
 }
-@media (min-width: 250px) and (max-width: 768px){
+@media (max-width: 768px){
     .faculty-spaces .space{
         width: 45% !important;
     }
     .container{
         width: 100%;
     }
+    .identity-logos-mobile img{
+        width: 75%;
+    }
 }
-@media (max-width: 1400px) {
+@media (min-width: 768.1px) and (max-width: 1400px){
+    .identity-logos-mobile{
+        display: flex !important;
+        flex-wrap: wrap;
+        width: 80%;
+        margin: 0 auto 2%;
+        justify-content: center;
+        align-items: center;
+    }
+    .identity-logos-mobile img:nth-child(1){
+        width: 33%;
+    }
+    .identity-logos-mobile img:nth-child(2){
+        width: 50%;
+        height: fit-content;
+    }
+}
+@media (max-width: 1400.1px) {
     .identity-logos{
         display: none !important;
     }
