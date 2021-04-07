@@ -17,35 +17,124 @@
                 </div>
                 <div class="row ">
                     <div class="col">
-                        
-                            <input class="form-check-input" type="radio" name="filtro" id="ingenieria" value="option1">
-                            <label class="form-check-label" for="ingenieria">Inge</label>
-                        
-                            <input class="form-check-input" type="radio" name="filtro" id="psicologia" value="option2">
-                            <label class="form-check-label" for="psicologia">2</label>
-                    
-                          <div id="gurpos">
-                            <div class="ingenieria" >
-                                <img src="Recurso 1.png" alt="">
-                            </div>
-                            <div class="psicologia" >
-                                <img src="up.png" alt="">
-                            </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input filter active" type="radio" name="filtro" id="todos" value="option1" onclick="filterSelection('all')"> 
+                            <label class="form-check-label" for="todos">Todos</label>
                         </div>
-                        
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input filter" type="radio" name="filtro" id="todos" value="option2" onclick="filterSelection('CTA')">
+                            <label class="form-check-label" for="CTA">CTA</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input filter" type="radio" name="filtro" id="todos" value="option3" onclick="filterSelection('EICEA')">
+                            <label class="form-check-label" for="EICEA">EICEA</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input filter" type="radio" name="filtro" id="todos" value="option4" onclick="filterSelection('educacion')">
+                            <label class="form-check-label" for="educacion">Educación</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input filter active" type="radio" name="filtro" id="todos" value="option5" onclick="filterSelection('ingenieria')">
+                            <label class="form-check-label" for="ingenieria">Ingeniería</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input filter active" type="radio" name="filtro" id="comunicacion" value="option6" onclick="filterSelection('comunicacion')">
+                            <label class="form-check-label" for="comunicacion">Comunicación</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input filter active" type="radio" name="filtro" id="todos" value="option7" onclick="filterSelection('INALDE')">
+                            <label class="form-check-label" for="INALDE">INALDE</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input filter active" type="radio" name="filtro" id="todos" value="option8" onclick="filterSelection('derecho')">
+                            <label class="form-check-label" for="derecho">Derecho</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input filter active" type="radio" name="filtro" id="todos" value="option9" onclick="filterSelection('familia')">
+                            <label class="form-check-label" for="familia">Instituto de la familia</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input filter active" type="radio" name="filtro" id="todos" value="option9" onclick="filterSelection('medicina')">
+                            <label class="form-check-label" for="medicina">Medicina</label>
+                        </div>
+                    <div class="d-flex justify-content-center">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input filter active" type="radio" name="filtro" id="todos" value="option9" onclick="filterSelection('enfermeria')">
+                            <label class="form-check-label" for="enfermeria">Enfermeria</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input filter active" type="radio" name="filtro" id="todos" value="option9" onclick="filterSelection('psicologia')">
+                            <label class="form-check-label" for="psicologia">Psicologia</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input filter active" type="radio" name="filtro" id="todos" value="option9" onclick="filterSelection('clinica')">
+                            <label class="form-check-label" for="clinica">Clinica</label>
+                        </div>
                     </div>
+                    </div>   
                 </div>
-                <div class="row ">
-                    <div class="col" id="gurpos">
-                        <div class="ingenieria" >
-                            <img src="Recurso 1.png" alt="">
+                <div class="row">
+                    <div class="col">
+                        <div class="filterDiv ingenieria">BMW</div>
+                        <div class="filterDiv colors fruits">Orange</div>
+                        <div class="filterDiv cars">Volvo</div>
+                        <div class="filterDiv colors">Red</div>
+                        <div class="filterDiv cars animals">Mustang</div>
+                        <div class="filterDiv colors">Blue</div>
+                        <div class="filterDiv animals">Cat</div>
+                        <div class="filterDiv animals">Dog</div>
+                        <div class="filterDiv fruits">Melon</div>
+                        <div class="filterDiv fruits animals">Kiwi</div>
+                        <div class="filterDiv fruits">Banana</div>
+                        <div class="filterDiv fruits">Lemon</div>
+                        <div class="filterDiv animals">Cow</div>
                         </div>
-                        <div class="Psicologia" >
-                            <img src="up.png" alt="">
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
+        <script>
+            filterSelection("all")
+            function filterSelection(c) {
+              var x, i;
+              x = document.getElementsByClassName("filterDiv");
+              if (c == "all") c = "";
+              for (i = 0; i < x.length; i++) {
+                w3RemoveClass(x[i], "show");
+                if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+              }
+            }
+            
+            function w3AddClass(element, name) {
+              var i, arr1, arr2;
+              arr1 = element.className.split(" ");
+              arr2 = name.split(" ");
+              for (i = 0; i < arr2.length; i++) {
+                if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+              }
+            }
+            
+            function w3RemoveClass(element, name) {
+              var i, arr1, arr2;
+              arr1 = element.className.split(" ");
+              arr2 = name.split(" ");
+              for (i = 0; i < arr2.length; i++) {
+                while (arr1.indexOf(arr2[i]) > -1) {
+                  arr1.splice(arr1.indexOf(arr2[i]), 1);     
+                }
+              }
+              element.className = arr1.join(" ");
+            }
+            
+            // Add active class to the current button (highlight it)
+            var btnContainer = document.getElementById("myBtnContainer");
+            var btns = btnContainer.getElementsByClassName("filter");
+            for (var i = 0; i < btns.length; i++) {
+              btns[i].addEventListener("click", function(){
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+              });
+            }
+            </script>
     </body>
 </html>
