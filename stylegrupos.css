@@ -32,3 +32,31 @@
     background-color: #666;
     color: white;
   }
+  .rgitem{
+      width: 100%;
+      background-color: red;
+      display: block;
+      position: relative;
+  }
+  .name-rg{
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      background-color: white;
+      border: 1px solid gray;
+      height: fit-content;
+      display: flex;
+      padding: 10px 15px;
+  }
+  .name-rg .square-color p{
+      line-height: normal;
+      margin: 0;
+      color: black;
+  }
+  .name-rg .square-color{
+      background-color: gold;
+      position: absolute;
+      display: block;
+      line-height: normal;
+      height: fit-content;
+  }
