@@ -409,7 +409,7 @@ a{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    width: 90%;
+    width: 92%;
     margin: 2% auto;
     /content-visibility: hidden;
 }
