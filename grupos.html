@@ -1,145 +1,1094 @@
 <!DOCTYPE html>
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="./stylegrupos.css">
-        <title>Grupos</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    </head>
-    <body>
-        <div>
-            <div class="container">
-                <div class="row ">
-                  <div class="col text-center">
-                    <h1>Grupos de investigación</h1>
-                  </div>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./stylegrupos.css">
+    <title>Grupos</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script>
+        $(function () {
+            $('[data-toggle="popover"]').popover()
+        })
+
+        $('.popover-dismiss').popover({
+            trigger: 'focus'
+        })
+    </script>
+</head>
+<body>
+<div>
+    <div class="container">
+        <div class="row ">
+            <div class="col text-center">
+                <h1>Grupos de investigación</h1>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input filter active" type="radio" name="filtro" id="todos" value="option1"
+                           onclick="filterSelection('all')">
+                    <label class="form-check-label" for="todos">Todos</label>
                 </div>
-                <div class="row ">
-                    <div class="col">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input filter active" type="radio" name="filtro" id="todos" value="option1" onclick="filterSelection('all')"> 
-                            <label class="form-check-label" for="todos">Todos</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input filter" type="radio" name="filtro" id="todos" value="option2" onclick="filterSelection('CTA')">
-                            <label class="form-check-label" for="CTA">CTA</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input filter" type="radio" name="filtro" id="todos" value="option3" onclick="filterSelection('EICEA')">
-                            <label class="form-check-label" for="EICEA">EICEA</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input filter" type="radio" name="filtro" id="todos" value="option4" onclick="filterSelection('educacion')">
-                            <label class="form-check-label" for="educacion">Educación</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input filter active" type="radio" name="filtro" id="todos" value="option5" onclick="filterSelection('ingenieria')">
-                            <label class="form-check-label" for="ingenieria">Ingeniería</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input filter active" type="radio" name="filtro" id="comunicacion" value="option6" onclick="filterSelection('comunicacion')">
-                            <label class="form-check-label" for="comunicacion">Comunicación</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input filter active" type="radio" name="filtro" id="todos" value="option7" onclick="filterSelection('INALDE')">
-                            <label class="form-check-label" for="INALDE">INALDE</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input filter active" type="radio" name="filtro" id="todos" value="option8" onclick="filterSelection('derecho')">
-                            <label class="form-check-label" for="derecho">Derecho</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input filter active" type="radio" name="filtro" id="todos" value="option9" onclick="filterSelection('familia')">
-                            <label class="form-check-label" for="familia">Instituto de la familia</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input filter active" type="radio" name="filtro" id="todos" value="option9" onclick="filterSelection('medicina')">
-                            <label class="form-check-label" for="medicina">Medicina</label>
-                        </div>
-                    <div class="d-flex justify-content-center">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input filter active" type="radio" name="filtro" id="todos" value="option9" onclick="filterSelection('enfermeria')">
-                            <label class="form-check-label" for="enfermeria">Enfermeria</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input filter active" type="radio" name="filtro" id="todos" value="option9" onclick="filterSelection('psicologia')">
-                            <label class="form-check-label" for="psicologia">Psicología</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input filter active" type="radio" name="filtro" id="todos" value="option9" onclick="filterSelection('clinica')">
-                            <label class="form-check-label" for="clinica">Clinica</label>
-                        </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input filter" type="radio" name="filtro" id="todos" value="option2"
+                           onclick="filterSelection('CTA')">
+                    <label class="form-check-label" for="CTA">CTA</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input filter" type="radio" name="filtro" id="todos" value="option3"
+                           onclick="filterSelection('EICEA')">
+                    <label class="form-check-label" for="EICEA">EICEA</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input filter" type="radio" name="filtro" id="todos" value="option4"
+                           onclick="filterSelection('educacion')">
+                    <label class="form-check-label" for="educacion">Educación</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input filter active" type="radio" name="filtro" id="todos" value="option5"
+                           onclick="filterSelection('ingenieria')">
+                    <label class="form-check-label" for="ingenieria">Ingeniería</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input filter active" type="radio" name="filtro" id="comunicacion"
+                           value="option6" onclick="filterSelection('comunicacion')">
+                    <label class="form-check-label" for="comunicacion">Comunicación</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input filter active" type="radio" name="filtro" id="todos" value="option7"
+                           onclick="filterSelection('INALDE')">
+                    <label class="form-check-label" for="INALDE">INALDE</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input filter active" type="radio" name="filtro" id="todos" value="option8"
+                           onclick="filterSelection('derecho')">
+                    <label class="form-check-label" for="derecho">Derecho</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input filter active" type="radio" name="filtro" id="todos" value="option9"
+                           onclick="filterSelection('familia')">
+                    <label class="form-check-label" for="familia">Instituto de la familia</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input filter active" type="radio" name="filtro" id="todos" value="option9"
+                           onclick="filterSelection('medicina')">
+                    <label class="form-check-label" for="medicina">Medicina</label>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input filter active" type="radio" name="filtro" id="todos"
+                               value="option9" onclick="filterSelection('enfermeria')">
+                        <label class="form-check-label" for="enfermeria">Enfermeria</label>
                     </div>
-                    </div>   
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="filterDiv ingenieria">BMW</div>
-                        <div class="rgitem CTA">
-                            <div class="name-rg"><div class="square-color"></div><p>Aqui va el nombre</p><div class="square-color"></div></div>
-                            <div class="">otro div</div>
-                        </div>
-                        <div class="filterDiv colors fruits">Orange</div>
-                        <div class="filterDiv cars">Volvo</div>
-                        <div class="filterDiv colors">Red</div>
-                        <div class="filterDiv cars animals">Mustang</div>
-                        <div class="filterDiv colors">Blue</div>
-                        <div class="filterDiv animals">Cat</div>
-                        <div class="filterDiv animals">Dog</div>
-                        <div class="filterDiv fruits">Melon</div>
-                        <div class="filterDiv fruits animals">Kiwi</div>
-                        <div class="filterDiv fruits">Banana</div>
-                        <div class="filterDiv fruits">Lemon</div>
-                        <div class="filterDiv animals">Cow</div>
-                        </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input filter active" type="radio" name="filtro" id="todos"
+                               value="option9" onclick="filterSelection('psicologia')">
+                        <label class="form-check-label" for="psicologia">Psicología</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input filter active" type="radio" name="filtro" id="todos"
+                               value="option9" onclick="filterSelection('clinica')">
+                        <label class="form-check-label" for="clinica">Clinica</label>
+                    </div>
                 </div>
             </div>
         </div>
-        <script>
-            filterSelection("all")
-            function filterSelection(c) {
-              var x, i;
-              x = document.getElementsByClassName("filterDiv");
-              if (c == "all") c = "";
-              for (i = 0; i < x.length; i++) {
-                w3RemoveClass(x[i], "show");
-                if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-              }
+        <div class="row">
+            <div class="col">
+                <div class="filterDiv ingenieria">BMW</div>
+                <div class="filterDiv CTA">
+                    <div class="name-rg">
+                        <div class="square-color"></div>
+                        <p>Centro de Tecnología para la Academía - CTA</p>
+                        <div class="square-color"></div>
+                    </div>
+                    <div class="content-info">
+                        <div class="section-one">
+                            <div class="section-title">Grupo de Investigación</div>
+                            <div class="section-desc"><a
+                                    href="https://www.unisabana.edu.co/grupos-de-investigacion/tecnologias-para-la-academia/"
+                                    target="_blank">Tecnologías para la Academia - Proventus</a>
+                            </div>
+                        </div>
+                        <div class="separation-line"></div>
+                        <div class="section-two">
+                            <div class="section-title">
+                                <button type="button" class="btn btn-secondary" data-container="body"
+                                        data-toggle="popover" data-placement="right" data-trigger="focus"
+                                        data-html='true'
+                                        data-content='Desde sus orígenes se ha preocupado por dar solución a las necesidades y problemas del sector educativo en Colombia, a través de la articulación o hibridación de la Innovación con la Tecnología Educativa, así como a la necesidad de transformación y mejoramiento de productos, procesos, estructuras e instituciones educativas, para hacerlos más pertinentes a la realidad cambiante e incierta del siglo XXI, a través de estudios y generación de nuevo conocimiento sobre la Innovación Educativa con uso de TIC.'>
+                                    Objetivo
+                                </button>
+                            </div>
+                            <div class="section-desc">
+                                <button type="button" class="btn btn-secondary" data-container="body"
+                                        data-toggle="popover" data-placement="right" data-trigger="focus"
+                                        data-html='true'
+                                        data-content='<ol>
+                                        <li>Ambientes de aprendizaje apoyados con TIC.</li>
+                                        <li>Diseño, desarrollo y evaluación de soluciones informáticas para la academía.</li>
+                                        <li>Prácticas innovadoras educativas medidadas por TIC.</li></ol>'>
+                                    Líneas de Investigación
+                                </button>
+                            </div>
+                        </div>
+                        <div class="separation-line"></div>
+                        <div class="section-three">
+                            <div class="section-title">Director de Grupo</div>
+                            <div class="section-desc">
+                                <p class="director">Ana Dolores Vargas Sanchéz</p>
+                                <p class="mail-address"><a href="mailto:ana.vargas12@unisabana.edu.co">ana.vargas12@unisabana.edu.co</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="separation-line"></div>
+                        <div class="section-four">
+                            <div class="section-title">
+                                <div class="ods">ODS</div>
+                                <div class="ods-numbers">
+                                    <div>4</div>
+                                    <div>9</div>
+                                </div>
+                            </div>
+                            <div class="section-desc">
+                                <button type="button" class="btn btn-secondary" data-container="body"
+                                        data-toggle="popover" data-placement="right" data-trigger="focus"
+                                        data-html='true'
+                                        data-content='Competencia digital'>
+                                    Semilleros
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filterDiv EICEA">
+                    <div class="name-rg">
+                        <div class="square-color"></div>
+                        <p>EICEA</p>
+                        <div class="square-color"></div>
+                    </div>
+                    <div class="content-info">
+                        <div class="section-one">
+                            <div class="section-title">Grupo de Investigación</div>
+                            <div class="section-desc"><a
+                                    href="https://www.unisabana.edu.co/grupos-de-investigacion/operations-and-supply-chain-management-research-group/"
+                                    target="_blank">Operations & Supply Chain Management</a>
+                            </div>
+                        </div>
+                        <div class="separation-line"></div>
+                        <div class="section-two">
+                            <div class="section-title">
+                                <button type="button" class="btn btn-secondary" data-container="body"
+                                        data-toggle="popover" data-placement="right" data-trigger="focus"
+                                        data-html='true'
+                                        data-content='El grupo <b>Operations & Supply Chain Management (OSCM)</b> desarrolla y aplica modelos de apoyo a la toma de decisiones (Decision Support Systems – DSS) en entornos de operaciones y cadenas de suministro buscando alcanzar la mayor eficiencia en términos de costos económicos, ambientales y sociales, tanto para empresas de manufactura como del sector servicios. De esta manera, contribuye a la generación de procesos altamente competitivos y sostenibles. El grupo Operations & Supply Chain Management (OSCM) desarrolla y aplica modelos de apoyo a la toma de decisiones (Decision Support Systems – DSS) en entornos de operaciones y cadenas de suministro buscando alcanzar la mayor eficiencia en términos de costos económicos, ambientales y sociales, tanto para empresas de manufactura como del sector servicios. De esta manera, contribuye a la generación de procesos altamente competitivos y sostenibles. El grupo OSCM está conformado por investigadores con un alto nivel de formación y amplia experiencia en el desarrollo de modelos para resolver problemas asociados a la logística y cadenas de suministros tales como: gestión de almacenes, planeación de la demanda, programación de operaciones, programación de rutas de transporte, logística de última milla, logística colaborativa, logística sostenible, logística humanitaria, diseño de cadenas de suministros, nuevos modos de transporte, logística 4.0, Smart Cities, indicadores de desempeño logístico, política pública logística, entre otros. Para ello, el grupo OSCM utiliza las técnicas y herramientas más avanzadas de la gestión de operaciones que permiten soportar, con criterio científico, la toma de decisiones empresariales.'>
+                                    Objetivo
+                                </button>
+                            </div>
+                            <div class="section-desc">
+                                <button type="button" class="btn btn-secondary" data-container="body"
+                                        data-toggle="popover" data-placement="right" data-trigger="focus"
+                                        data-html='true'
+                                        data-content='<ol>
+                                        <li>Análisis de operaciones.</li>
+                                        <li>Migración.</li>
+                                        <li>Logística.</li>
+                                        <li>Calidad.</li>
+                                        <li>Operaciones.</li>
+                                        <li>Sostenibilidad.</li>
+                                        <li>Marketing y Responsabilidad Social.</li>
+                                        <li>Logística estratégica.</li>
+                                        <li>Inteligencia de mercados.</li>
+                                        <li>Negociación y Comercio.</li></ol>'>
+                                    Líneas de Investigación
+                                </button>
+                            </div>
+                        </div>
+                        <div class="separation-line"></div>
+                        <div class="section-three">
+                            <div class="section-title">Director de Grupo</div>
+                            <div class="section-desc">
+                                <p class="director"><a href="https://orcid.org/0000-0001-8563-4456">Carlos Leonardo Quintero Araujo</a></p>
+                                <p class="mail-address"><a href="mailto:carlos.quitero5@unisabana.edu.co">carlos.quitero5@unisabana.edu.co</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="separation-line"></div>
+                        <div class="section-four">
+                            <div class="section-title">
+                                <div class="ods">ODS</div>
+                                <div class="ods-numbers">
+                                    <div>2</div>
+                                    <div>8</div>
+                                </div>
+                            </div>
+                            <div class="section-desc">
+                                <button type="button" class="btn btn-secondary" data-container="body"
+                                        data-toggle="popover" data-placement="right" data-trigger="focus"
+                                        data-html='true'
+                                        data-content='Logística Empresarial'>
+                                    Semilleros
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filterDiv EICEA">
+                    <div class="name-rg">
+                        <div class="square-color"></div>
+                        <p>EICEA</p>
+                        <div class="square-color"></div>
+                    </div>
+                    <div class="content-info">
+                        <div class="section-one">
+                            <div class="section-title">Grupo de Investigación</div>
+                            <div class="section-desc">Innovación y Estrategia</div>
+                        </div>
+                        <div class="separation-line"></div>
+                        <div class="section-two">
+                            <div class="section-title">
+                                <button type="button" class="btn btn-secondary" data-container="body"
+                                        data-toggle="popover" data-placement="right" data-trigger="focus"
+                                        data-html='true'
+                                        data-content='El grupo de investigación <b>Innovación y Estrategia</b> tiene como objetivo contribuir a la generación de conocimiento científico en el campo de la innovación y la estrategia y con esto a una mejor comprensión de la realidad empresarial en estos temas y al diseño de estrategias que contribuyan a mejorar la competitividad y la sostenibilidad empresarial, sectorial y nacional. Para el logro de estos objetivos el grupo investiga en tres líneas: Innovación y gestión de conocimiento, Organizaciones y estrategia; Marketing y comportamiento del consumidor. Como resultado de su actividad investigativa, el grupo cuenta con experiencia en investigación y formación especializada en lo referente a: 1- generación y consolidación de cultura de la innovación en las personas, las empresas, las regiones y los países; 2- Procesos de innovación y prototipado; 3- Innovación abierta (modelos, metodologías y herramientas); 4-  Innovación por diseño (modelos, metodologías y herramientas); 5- Innovación y sostenibilidad empresarial; 6- gerencia del conocimiento (identificación, adaptación, socialización, transferencia, creación y uso de conocimiento – con modelos, metodologías y herramientas); 7- Relación entre gerencia del conocimiento, la innovación y la sostenibilidad empresarial; 8- Neurociencias aplicadas a la actividad empresarial especialmente en el campo de marketing y el comportamiento del consumidor; 9- procesos de industrias 4.0 (caracterización de las empresas en I4.0, rol de la cultura en los procesos de implementación de las tecnologías 4.0, relación entre lean & green e I4.0).'>
+                                    Objetivo
+                                </button>
+                            </div>
+                            <div class="section-desc">
+                                <button type="button" class="btn btn-secondary" data-container="body"
+                                        data-toggle="popover" data-placement="right" data-trigger="focus"
+                                        data-html='true'
+                                        data-content='<ol>
+                                        <li>Epistemología del cambio técnico, la innovación, tecnología y el conocimiento operativo.</li>
+                                        <li>Innovación y desarrollo industrial.</li>
+                                        <li>Sistemas logísticos.</li>
+                                        <li>Cambio e innovación tecnológica.</li>
+                                        <li>Teoria de la educación gestión de la innovación.</li>
+                                        <li>Gestión del conocimiento.</li>
+                                        <li>Comportamiento del consumidor.</li>
+                                        <li>Organizaciones y estrategia.</li></ol>'>
+                                    Líneas de Investigación
+                                </button>
+                            </div>
+                        </div>
+                        <div class="separation-line"></div>
+                        <div class="section-three">
+                            <div class="section-title">Director de Grupo</div>
+                            <div class="section-desc">
+                                <p class="director">Cesar Augusto Bernal Torres</p>
+                                <p class="mail-address"><a href="mailto:cesar.bernal@unisabana.edu.co">cesar.bernal@unisabana.edu.co</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="separation-line"></div>
+                        <div class="section-four">
+                            <div class="section-title">
+                                <div class="ods">ODS</div>
+                                <div class="ods-numbers">
+                                    <div>8</div>
+                                    <div>9</div>
+                                    <div>12</div>
+                                </div>
+                            </div>
+                            <div class="section-desc">
+                                <button type="button" class="btn btn-secondary" data-container="body"
+                                        data-toggle="popover" data-placement="right" data-trigger="focus"
+                                        data-html='true'
+                                        data-content='<ol>
+                                        <li>Innovación y gestión del conocimiento como estrategias de competividad en las organizaciones.</li>
+                                        <li>Evolucinary Economics.</li>
+                                        <li>Creatividad, innovación y estrategia en el marco de la economia circular.</li>
+                                        </ol>'>
+                                    Semilleros
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filterDiv EICEA">
+                    <div class="name-rg">
+                        <div class="square-color"></div>
+                        <p>EICEA</p>
+                        <div class="square-color"></div>
+                    </div>
+                    <div class="content-info">
+                        <div class="section-one">
+                            <div class="section-title">Grupo de Investigación</div>
+                            <div class="section-desc">Negocios, Economía y Finanzas</div>
+                        </div>
+                        <div class="separation-line"></div>
+                        <div class="section-two">
+                            <div class="section-title">
+                                <button type="button" class="btn btn-secondary" data-container="body"
+                                        data-toggle="popover" data-placement="right" data-trigger="focus"
+                                        data-html='true'
+                                        data-content='El grupo de investigación Negocios, Economía y Finanzas ofrece respuestas a dilemas, problemas y retos del mundo real a través del análisis de dinámicas económicas, sociales, financieras y políticas, que constituyen el contexto de las diferentes actividades de mercado, comercio e internacionalización entre organizaciones en un mundo globalizado. Por ello, las líneas de investigación contribuyen a solucionar problemas con base en: análisis económico, el rol financiero de inversionistas institucionales, la gobernanza regional, la innovación en firmas exportadoras, y la conducta empresarial responsable.'>
+                                    Objetivo
+                                </button>
+                            </div>
+                            <div class="section-desc">
+                                <button type="button" class="btn btn-secondary" data-container="body"
+                                        data-toggle="popover" data-placement="right" data-trigger="focus"
+                                        data-html='true'
+                                        data-content='<ol>
+                                        <li>Sostenibilidad.</li>
+                                        <li>Comercio.</li>
+                                        <li>Finanzas.</li>
+                                        <li>Economia Social.</li>
+                                        <li>Internacionalización y comercio exterior..</li></ol>'>
+                                    Líneas de Investigación
+                                </button>
+                            </div>
+                        </div>
+                        <div class="separation-line"></div>
+                        <div class="section-three">
+                            <div class="section-title">Director de Grupo</div>
+                            <div class="section-desc">
+                                <p class="director">Jose Eduardo Gómez</p>
+                                <p class="mail-address"><a href="mailto:jose.gomez2@unisabana.edu.co">jose.gomez2@unisabana.edu.co</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="separation-line"></div>
+                        <div class="section-four">
+                            <div class="section-title">
+                                <div class="ods">ODS</div>
+                                <div class="ods-numbers">
+                                    <div>8</div>
+                                    <div>12</div>
+                                </div>
+                            </div>
+                            <div class="section-desc">
+                                <button type="button" class="btn btn-secondary" data-container="body"
+                                        data-toggle="popover" data-placement="right" data-trigger="focus"
+                                        data-html='true'
+                                        data-content='<ol>
+                                        <li>Econometria.</li>
+                                        <li>Creatividad, innovación y estrategia en el marco de la economia circular.</li>
+                                        </ol>'>
+                                    Semilleros
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filterDiv EICEA">
+                    <div class="name-rg">
+                        <div class="square-color"></div>
+                        <p>EICEA</p>
+                        <div class="square-color"></div>
+                    </div>
+                    <div class="content-info">
+                        <div class="section-one">
+                            <div class="section-title">Grupo de Investigación</div>
+                            <div class="section-desc">Alimentación, Gestión de Procesos y Servicios</div>
+                        </div>
+                        <div class="separation-line"></div>
+                        <div class="section-two">
+                            <div class="section-title">
+                                <button type="button" class="btn btn-secondary" data-container="body"
+                                        data-toggle="popover" data-placement="right" data-trigger="focus"
+                                        data-html='true'
+                                        data-content='El grupo de investigación Alimentación, Gestión de Procesos y Servicio, ofrece una visión interdisciplinar a través instrumentos y metodologías para la comprensión holística de prácticas y saberes relacionados con la alimentación, desde la seguridad alimentaria hasta el diseño y desarrollo de productos gastronómicos, dentro de los contextos bioculturales, tecnológicos, económicos, políticos y sociales. Por otro lado articula a las organizaciones con visión estratégica del servicio y de la calidad.'>
+                                    Objetivo
+                                </button>
+                            </div>
+                            <div class="section-desc">
+                                <button type="button" class="btn btn-secondary" data-container="body"
+                                        data-toggle="popover" data-placement="right" data-trigger="focus"
+                                        data-html='true'
+                                        data-content='<ol>
+                                        <li>Aplicaciones de ciencia en gastronomia.</li>
+                                        <li>Cultura de la alimentación.</li>
+                                        <li>Artes culinarias.</li>
+                                        <li>Servicio y hospitalidad.</li></ol>'>
+                                    Líneas de Investigación
+                                </button>
+                            </div>
+                        </div>
+                        <div class="separation-line"></div>
+                        <div class="section-three">
+                            <div class="section-title">Director de Grupo</div>
+                            <div class="section-desc">
+                                <p class="director">Luz Indira Sotelo Díaz</p>
+                                <p class="mail-address"><a href="mailto:indira.sotelo@unisabana.edu.co">indira.sotelo@unisabana.edu.co</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="separation-line"></div>
+                        <div class="section-four">
+                            <div class="section-title">
+                                <div class="ods">ODS</div>
+                                <div class="ods-numbers">
+                                    <div>2</div>
+                                    <div>9</div>
+                                </div>
+                            </div>
+                            <div class="section-desc">
+                                <button type="button" class="btn btn-secondary" data-container="body"
+                                        data-toggle="popover" data-placement="right" data-trigger="focus"
+                                        data-html='true'
+                                        data-content='<ol>
+                                        <li>Servicio y hospitalidad.</li>
+                                        <li>GastroScience.</li>
+                                        <li>Semillero Nutriere.</li>
+                                        </ol>'>
+                                    Semilleros
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filterDiv comunicacion">
+                    <div class="name-rg">
+                        <div class="square-color"></div>
+                        <p>Facultad de Comunicación</p>
+                        <div class="square-color"></div>
+                    </div>
+                    <div class="content-info">
+                        <div class="section-one">
+                            <div class="section-title">Grupo de Investigación</div>
+                            <div class="section-desc">Grupo de Investigación en Periodismo</div>
+                        </div>
+                        <div class="separation-line"></div>
+                        <div class="section-two">
+                            <div class="section-title">
+                                <button type="button" class="btn btn-secondary" data-container="body"
+                                        data-toggle="popover" data-placement="right" data-trigger="focus"
+                                        data-html='true'
+                                        data-content='El Grupo de Investigación en Periodismo - GIP estudia de forma detallada el tratamiento que los medios de comunicación le dan a la información que publican, con el fin de garantizar que la opinión pública reciba productos informativos de excelente calidad y que además contribuyan al bien común.'>
+                                    Objetivo
+                                </button>
+                            </div>
+                            <div class="section-desc">
+                                <button type="button" class="btn btn-secondary" data-container="body"
+                                        data-toggle="popover" data-placement="right" data-trigger="focus"
+                                        data-html='true'
+                                        data-content='<ol>
+                                        <li>Nuevas tecnologías e información periodistica.</li>
+                                        <li>Sistemas informativos y derecho a la información.</li>
+                                        <li>Periodismo, medios y participación ciudadana.</li>
+                                        <li>Calidad de la información periodística.</li></ol>'>
+                                    Líneas de Investigación
+                                </button>
+                            </div>
+                        </div>
+                        <div class="separation-line"></div>
+                        <div class="section-three">
+                            <div class="section-title">Director de Grupo</div>
+                            <div class="section-desc">
+                                <p class="director">Liliana María Gutiérrez Coba</p>
+                                <p class="mail-address"><a href="mailto:liliana.gutierrez1@unisabana.edu.co">liliana.gutierrez1@unisabana.edu.co</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="separation-line"></div>
+                        <div class="section-four">
+                            <div class="section-title">
+                                <div class="ods">ODS</div>
+                                <div class="ods-numbers">
+                                    <div>9</div>
+                                </div>
+                            </div>
+                            <div class="section-desc">
+                                <button type="button" class="btn btn-secondary" data-container="body"
+                                        data-toggle="popover" data-placement="right" data-trigger="focus"
+                                        data-html='true'
+                                        data-content='<ol>
+                                        <li>Calidad informativa.</li>
+                                        <li>Periodismo digital del GIP.</li></ol>'>
+                                    Semilleros
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filterDiv comunicacion">
+                    <div class="name-rg">
+                        <div class="square-color"></div>
+                        <p>Facultad de Comunicación</p>
+                        <div class="square-color"></div>
+                    </div>
+                    <div class="content-info">
+                        <div class="section-one">
+                            <div class="section-title">Grupo de Investigación</div>
+                            <div class="section-desc">Centro de Investigaciones de la Comunicación Corporativa Organizacional- CICCO</div>
+                        </div>
+                        <div class="separation-line"></div>
+                        <div class="section-two">
+                            <div class="section-title">
+                                <button type="button" class="btn btn-secondary" data-container="body"
+                                        data-toggle="popover" data-placement="right" data-trigger="focus"
+                                        data-html='true'
+                                        data-content='Investigaciones sobre la comunicación de las organizaciones empresariales y públicas.'>
+                                    Objetivo
+                                </button>
+                            </div>
+                            <div class="section-desc">
+                                <button type="button" class="btn btn-secondary" data-container="body"
+                                        data-toggle="popover" data-placement="right" data-trigger="focus"
+                                        data-html='true'
+                                        data-content='<ol>
+                                        <li>Comunicación y tecnologias aplicadas a la organización.</li>
+                                        <li>Libertad de prensa y derecho  a la información.</li>
+                                        <li>Mejoramiento de la calidad de las comunicaciones organizacionales.</li>
+                                        <li>Comunicación en las organizaciones.</li>
+                                        <li>Gestión de empresas de comunicación.</li></ol>'>
+                                    Líneas de Investigación
+                                </button>
+                            </div>
+                        </div>
+                        <div class="separation-line"></div>
+                        <div class="section-three">
+                            <div class="section-title">Director de Grupo</div>
+                            <div class="section-desc">
+                                <p class="director">Ángela Sofia Preciado Hoyos</p>
+                                <p class="mail-address"><a href="mailto:angela.preciada@unisabana.edu.co">angela.preciada@unisabana.edu.co</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="separation-line"></div>
+                        <div class="section-four">
+                            <div class="section-title">
+                                <div class="ods">ODS</div>
+                                <div class="ods-numbers">
+                                    <div>8</div>
+                                    <div>9</div>
+                                </div>
+                            </div>
+                            <div class="section-desc">
+                                <button type="button" class="btn btn-secondary" data-container="body"
+                                        data-toggle="popover" data-placement="right" data-trigger="focus"
+                                        data-html='true'
+                                        data-content='Aún no hay'>
+                                    Semilleros
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filterDiv comunicacion">
+                    <div class="name-rg">
+                        <div class="square-color"></div>
+                        <p>Facultad de Comunicación</p>
+                        <div class="square-color"></div>
+                    </div>
+                    <div class="content-info">
+                        <div class="section-one">
+                            <div class="section-title">Grupo de Investigación</div>
+                            <div class="section-desc">Cultura Audiovisual</div>
+                        </div>
+                        <div class="separation-line"></div>
+                        <div class="section-two">
+                            <div class="section-title">
+                                <button type="button" class="btn btn-secondary" data-container="body"
+                                        data-toggle="popover" data-placement="right" data-trigger="focus"
+                                        data-html='true'
+                                        data-content='El grupo de investigación Cultura Audiovisual se propone investigar el conjunto de prácticas, representaciones y lenguajes simbólicos que se relacionan con los procesos de comunicación audiovisual y sus modos y medios específicos, en contextos sociales concretos. Así mismo, busca  analizar las relaciones entre la comunicación y los procesos de configuración de culturas audiovisuales para comprender la implicación de lo audiovisual en los procesos de construcción de la realidad social y cultural. Entre sus intereses actuales se encuentra estudiar los discursos y narrativas audiovisuales, investigar los fenómenos, procesos y prácticas de comunicación y representación audiovisual para comprender las relaciones entre la producción, la difusión y el consumo o uso de los productos y medios audiovisuales. Como proyección al futuro buscamos construir archivos de investigación que permitan a futuros investigadores plantear problemas específicos sobre este campo y  formar nuevas generaciones de profesionales interesados en el estudio de la cultura audiovisual. Uno de nuestros objetivos estratégicos es promover el estudio de la cultura audiovisual en Colombia desde distintas perspectivas y fortalecer la relación entre la academia y la industria para el mejoramiento de las prácticas profesionales y el fomento de la investigación-creación.'>
+                                    Objetivo
+                                </button>
+                            </div>
+                            <div class="section-desc">
+                                <button type="button" class="btn btn-secondary" data-container="body"
+                                        data-toggle="popover" data-placement="right" data-trigger="focus"
+                                        data-html='true'
+                                        data-content='<ol>
+                                        <li>Teoria de la comunicación audiovisual.</li>
+                                        <li>Representación audiovisual.</li>
+                                        <li>Prácticas audivisuales.</li>
+                                        <li>Discursos y narrativas audivisuales.</li></ol>'>
+                                    Líneas de Investigación
+                                </button>
+                            </div>
+                        </div>
+                        <div class="separation-line"></div>
+                        <div class="section-three">
+                            <div class="section-title">Director de Grupo</div>
+                            <div class="section-desc">
+                                <p class="director">Edward Francisco Goyeneche Gómez</p>
+                                <p class="mail-address"><a href="mailto:edward.goyeneche@unisabana.edu.co">edward.goyeneche@unisabana.edu.co</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="separation-line"></div>
+                        <div class="section-four">
+                            <div class="section-title">
+                                <div class="ods">ODS</div>
+                                <div class="ods-numbers">
+                                    <div>9</div>
+                                </div>
+                            </div>
+                            <div class="section-desc">
+                                <button type="button" class="btn btn-secondary" data-container="body"
+                                        data-toggle="popover" data-placement="right" data-trigger="focus"
+                                        data-html='true'
+                                        data-content='<ol>
+                                        <li>Semillero interdisciplinario de guión y laboratorio audivisual (SIGLA).</li>
+                                        <li>Análisis y producción audivisual.</li></ol>'>
+                                    Semilleros
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filterDiv comunicacion">
+                    <div class="name-rg">
+                        <div class="square-color"></div>
+                        <p>Facultad de Comunicación</p>
+                        <div class="square-color"></div>
+                    </div>
+                    <div class="content-info">
+                        <div class="section-one">
+                            <div class="section-title">Grupo de Investigación</div>
+                            <div class="section-desc">Observatorio de Medios</div>
+                        </div>
+                        <div class="separation-line"></div>
+                        <div class="section-two">
+                            <div class="section-title">
+                                <button type="button" class="btn btn-secondary" data-container="body"
+                                        data-toggle="popover" data-placement="right" data-trigger="focus"
+                                        data-html='true'
+                                        data-content='Desde su inicio, el Observatorio de Medios de la Facultad de Comunicación se ha preocupado porque sus investigaciones y publicaciones respondan a las necesidades del entorno y señalen posibles caminos para la solución de las problemáticas de la sociedad colombiana. La primera investigación, por ejemplo, partió de una propuesta del grupo -Acuerdo por la Discreción-, dirigida a los medios de comunicación de Colombia, para mejorar la calidad de la información sobre el conflicto armado; de otra parte, hoy se investiga el entorno inmediato del Campus a través de la alianza “Sabana Centro Cómo Vamos” para detectar problemas de los habitantes de la región y luego generar dinámicas que aporten soluciones efectivas.'>
+                                    Objetivo
+                                </button>
+                            </div>
+                            <div class="section-desc">
+                                <button type="button" class="btn btn-secondary" data-container="body"
+                                        data-toggle="popover" data-placement="right" data-trigger="focus"
+                                        data-html='true'
+                                        data-content='<ol>
+                                        <li>Comunicación pública, medios de comunicación y participación.</li>
+                                        <li>Calidad de la información periodistica.</li>
+                                        <li>Comunicación para el desarrollo.</li>
+                                        <li>Educación de audiencias.</li>
+                                        <li>Consumo de medios.</li>
+                                        <li>Cultura de masas e industrias culturales.</li></ol>'>
+                                    Líneas de Investigación
+                                </button>
+                            </div>
+                        </div>
+                        <div class="separation-line"></div>
+                        <div class="section-three">
+                            <div class="section-title">Director de Grupo</div>
+                            <div class="section-desc">
+                                <p class="director">Juan Carlos Gómez Giraldo</p>
+                                <p class="mail-address"><a href="mailto:juan.gomez@unisabana.edu.co">juan.gomez@unisabana.edu.co</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="separation-line"></div>
+                        <div class="section-four">
+                            <div class="section-title">
+                                <div class="ods">ODS</div>
+                                <div class="ods-numbers">
+                                    <div>11</div>
+                                    <div>16</div>
+                                </div>
+                            </div>
+                            <div class="section-desc">
+                                <button type="button" class="btn btn-secondary" data-container="body"
+                                        data-toggle="popover" data-placement="right" data-trigger="focus"
+                                        data-html='true'
+                                        data-content='<ol>
+                                        <li>Observatorio de medios.</li>
+                                        <li>Investigación en procesos de paz y medios de comunicación.</li></ol>'>
+                                    Semilleros
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filterDiv derecho">
+                    <div class="name-rg">
+                        <div class="square-color"></div>
+                        <p>Facultad de Derecho y Ciencias Políticas</p>
+                        <div class="square-color"></div>
+                    </div>
+                    <div class="content-info">
+                        <div class="section-one">
+                            <div class="section-title">Grupo de Investigación</div>
+                            <div class="section-desc">Derecho Internacional</div>
+                        </div>
+                        <div class="separation-line"></div>
+                        <div class="section-two">
+                            <div class="section-title">
+                                <button type="button" class="btn btn-secondary" data-container="body"
+                                        data-toggle="popover" data-placement="right" data-trigger="focus"
+                                        data-html='true'
+                                        data-content='El grupo de investigación <b>Derecho Internacional</b> investiga problemas actuales del derecho internacional, desde una perspectiva humanista que considera la dignidad humana como fundamento de todo derecho con el objeto de convertirse en una plataforma que sirva en la integración de la facultad tanto para estudiantes como para sus profesores a través de la capacitación de estos en temas propios del grupo'>
+                                    Objetivo
+                                </button>
+                            </div>
+                            <div class="section-desc">
+                                <button type="button" class="btn btn-secondary" data-container="body"
+                                        data-toggle="popover" data-placement="right" data-trigger="focus"
+                                        data-html='true'
+                                        data-content='<ol>
+                                        <li>Empresas y derechos humanos.</li>
+                                        <li>Relaciones entre el derecho interno y el derecho internacional.</li>
+                                        <li>Derecho de la integración.</li>
+                                        <li>Justicia interamericana.</li></ol>'>
+                                    Líneas de Investigación
+                                </button>
+                            </div>
+                        </div>
+                        <div class="separation-line"></div>
+                        <div class="section-three">
+                            <div class="section-title">Director de Grupo</div>
+                            <div class="section-desc">
+                                <p class="director">María Carmelina Londoño Lázaro</p>
+                                <p class="mail-address"><a href="mailto:maria.londono1@unisabana.edu.co">maria.londono1@unisabana.edu.co</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="separation-line"></div>
+                        <div class="section-four">
+                            <div class="section-title">
+                                <div class="ods">ODS</div>
+                                <div class="ods-numbers">
+                                    <div>16</div>
+                                </div>
+                            </div>
+                            <div class="section-desc">
+                                <button type="button" class="btn btn-secondary" data-container="body"
+                                        data-toggle="popover" data-placement="right" data-trigger="focus"
+                                        data-html='true'
+                                        data-content='<ol>
+                                        <li>Relaciones entre derecho internacional y derecho interno.</li>
+                                        <li>Apoyo al litigio Interamericano de Derechos Humanos.</li>
+                                        <li>Semlillero de Justicia Transcional.</li>
+                                        <li>Semillero de Moot Court.</li></ol>'>
+                                    Semilleros
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filterDiv derecho">
+                    <div class="name-rg">
+                        <div class="square-color"></div>
+                        <p>Facultad de Derecho y Ciencias Políticas</p>
+                        <div class="square-color"></div>
+                    </div>
+                    <div class="content-info">
+                        <div class="section-one">
+                            <div class="section-title">Grupo de Investigación</div>
+                            <div class="section-desc">Derecho Privado</div>
+                        </div>
+                        <div class="separation-line"></div>
+                        <div class="section-two">
+                            <div class="section-title">
+                                <button type="button" class="btn btn-secondary" data-container="body"
+                                        data-toggle="popover" data-placement="right" data-trigger="focus"
+                                        data-html='true'
+                                        data-content='El grupo de investigación sobre el <b>Derecho Privado</b>, busca descubrir las diferentes dimensiones jurídicas, propias de las instituciones que hacen parte de esta rama del Derecho. Partiendo del análisis de las diferentes estructuras del derecho privado, con el fin de llegar a conclusiones que brinden diversas posturas académicas y doctrinales, para permitir un acercamiento más profundo a estos fenómenos que integran la acción humana.'>
+                                    Objetivo
+                                </button>
+                            </div>
+                            <div class="section-desc">
+                                <button type="button" class="btn btn-secondary" data-container="body"
+                                        data-toggle="popover" data-placement="right" data-trigger="focus"
+                                        data-html='true'
+                                        data-content='<ol>
+                                        <li>Economía digital.</li>
+                                        <li>Responsabilidad civil  y del Estado.</li>
+                                        <li>Derecho y nuevas tecnologias.</li>
+                                        <li>Derecho y economía.</li>
+                                        <li>Derecho mercantil internacional.</li>
+                                        <li>Derecho comparado.</li></ol>'>
+                                    Líneas de Investigación
+                                </button>
+                            </div>
+                        </div>
+                        <div class="separation-line"></div>
+                        <div class="section-three">
+                            <div class="section-title">Director de Grupo</div>
+                            <div class="section-desc">
+                                <p class="director">Juan Fernando Córdoba Marentes</p>
+                                <p class="mail-address"><a href="mailto:juan.cordoba@unisabana.edu.co">juan.cordoba@unisabana.edu.co</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="separation-line"></div>
+                        <div class="section-four">
+                            <div class="section-title">
+                                <div class="ods">ODS</div>
+                                <div class="ods-numbers">
+                                    <div>16</div>
+                                </div>
+                            </div>
+                            <div class="section-desc">
+                                <button type="button" class="btn btn-secondary" data-container="body"
+                                        data-toggle="popover" data-placement="right" data-trigger="focus"
+                                        data-html='true'
+                                        data-content='<ol>
+                                        <li>Investigación en responsabilidad civil y del Estado.</li>
+                                        <li>Derecho del Trabjo y de la Seguridad Social.</li>
+                                        <li>Investigación de actualización de Derecho Civil de Bienes.</li></ol>'>
+                                    Semilleros
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filterDiv derecho">
+                    <div class="name-rg">
+                        <div class="square-color"></div>
+                        <p>Facultad de Derecho y Ciencias Políticas</p>
+                        <div class="square-color"></div>
+                    </div>
+                    <div class="content-info">
+                        <div class="section-one">
+                            <div class="section-title">Grupo de Investigación</div>
+                            <div class="section-desc">Justicia, ambito público y derechos humanos</div>
+                        </div>
+                        <div class="separation-line"></div>
+                        <div class="section-two">
+                            <div class="section-title">
+                                <button type="button" class="btn btn-secondary" data-container="body"
+                                        data-toggle="popover" data-placement="right" data-trigger="focus"
+                                        data-html='true'
+                                        data-content='El grupo de <b>Justicia, Ámbito Público y Derechos Humanos</b> tiene como objetivo realizar estudios sobre la jurisprudencia constitucional tanto colombiana como extranjera, indagación que encuentra justificación en la medida en que las decisiones judiciales han retomado una posición relevante en el ámbito de las fuentes del derecho, en la que la jurisprudencia sólo cumplía un papel secundario, para hallarse ahora en igualdad de condiciones con otras fuentes del derecho. Hoy en día el énfasis de la investigación está dirigido hacia los fundamentos filosóficos y los desafíos empíricos que caracterizan el desarrollo del Derecho Público y los Derechos Humanos, de tal manera que también se investiga acerca de la eficacia de instituciones jurídicas especificas en la realidad.'>
+                                    Objetivo
+                                </button>
+                            </div>
+                            <div class="section-desc">
+                                <button type="button" class="btn btn-secondary" data-container="body"
+                                        data-toggle="popover" data-placement="right" data-trigger="focus"
+                                        data-html='true'
+                                        data-content='<ol>
+                                        <li>Fundamentación juridica.</li>
+                                        <li>Razonamiento constitucional.</li>
+                                        <li>Justicia constituciona y filosofia política.</li></ol>'>
+                                    Líneas de Investigación
+                                </button>
+                            </div>
+                        </div>
+                        <div class="separation-line"></div>
+                        <div class="section-three">
+                            <div class="section-title">Director de Grupo</div>
+                            <div class="section-desc">
+                                <p class="director">Fabio Enrique Pulido Ortiz</p>
+                                <p class="mail-address"><a href="mailto:fabio.pulido@unisabana.edu.co">fabio.pulido@unisabana.edu.co</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="separation-line"></div>
+                        <div class="section-four">
+                            <div class="section-title">
+                                <div class="ods">ODS</div>
+                                <div class="ods-numbers">
+                                    <div>16</div>
+                                </div>
+                            </div>
+                            <div class="section-desc">
+                                <button type="button" class="btn btn-secondary" data-container="body"
+                                        data-toggle="popover" data-placement="right" data-trigger="focus"
+                                        data-html='true'
+                                        data-content='<ol>
+                                        <li>Investigación en responsabilidad civil y del Estado.</li>
+                                        <li>Fundamentos filosóficos del Derecho Constitucional.</li>
+                                        <li>Centro de Estudios en Gobierno y Justicia.</li></ol>'>
+                                    Semilleros
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filterDiv derecho">
+                    <div class="name-rg">
+                        <div class="square-color"></div>
+                        <p>Facultad de Derecho y Ciencias Políticas</p>
+                        <div class="square-color"></div>
+                    </div>
+                    <div class="content-info">
+                        <div class="section-one">
+                            <div class="section-title">Grupo de Investigación</div>
+                            <div class="section-desc">Res Publica</div>
+                        </div>
+                        <div class="separation-line"></div>
+                        <div class="section-two">
+                            <div class="section-title">
+                                <button type="button" class="btn btn-secondary" data-container="body"
+                                        data-toggle="popover" data-placement="right" data-trigger="focus"
+                                        data-html='true'
+                                        data-content='El grupo <b>Res Publica</b> desde su especialidad en los campos de la teoría política, la gestión pública y las relaciones internacionales, los investigadores del grupo de investigación Res Publica están comprometidos con el estudio y el análisis de los asuntos públicos más relevantes, poniendo a disposición de la comunidad académica, los policymakers y los ciudadanos mejores diagnósticos de los problemas contemporáneos e insumos pertinentes que contribuyan a tomar decisiones en procura del bien común.'>
+                                    Objetivo
+                                </button>
+                            </div>
+                            <div class="section-desc">
+                                <button type="button" class="btn btn-secondary" data-container="body"
+                                        data-toggle="popover" data-placement="right" data-trigger="focus"
+                                        data-html='true'
+                                        data-content='<ol>
+                                        <li>Historia y teoria política.</li>
+                                        <li>Gestión y asuntos públicos.</li>
+                                        <li>Asuntos globales.</li></ol>'>
+                                    Líneas de Investigación
+                                </button>
+                            </div>
+                        </div>
+                        <div class="separation-line"></div>
+                        <div class="section-three">
+                            <div class="section-title">Director de Grupo</div>
+                            <div class="section-desc">
+                                <p class="director">Iván Darío Garzón Vallejo</p>
+                                <p class="mail-address"><a href="mailto:ivan.garzon1@unisabana.edu.co">ivan.garzon1@unisabana.edu.co</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="separation-line"></div>
+                        <div class="section-four">
+                            <div class="section-title">
+                                <div class="ods">ODS</div>
+                                <div class="ods-numbers">
+                                    <div>11</div>
+                                    <div>16</div>
+                                </div>
+                            </div>
+                            <div class="section-desc">
+                                <button type="button" class="btn btn-secondary" data-container="body"
+                                        data-toggle="popover" data-placement="right" data-trigger="focus"
+                                        data-html='true'
+                                        data-content='<ol>
+                                        <li>Investigación en Ciencias Políticas.</li>
+                                        <li>Res Pública.</li>
+                                        <li>Centro de estudios en Gobierno y Justicia.</li></ol>'>
+                                    Semilleros
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filterDiv enfermeria">
+                    <div class="name-rg">
+                        <div class="square-color"></div>
+                        <p>Facultad de Enfermería y Rehabilitación</p>
+                        <div class="square-color"></div>
+                    </div>
+                    <div class="content-info">
+                        <div class="section-one">
+                            <div class="section-title">Grupo de Investigación</div>
+                            <div class="section-desc">Movimiento Corporal Humano</div>
+                        </div>
+                        <div class="separation-line"></div>
+                        <div class="section-two">
+                            <div class="section-title">
+                                <button type="button" class="btn btn-secondary" data-container="body"
+                                        data-toggle="popover" data-placement="right" data-trigger="focus"
+                                        data-html='true'
+                                        data-content='El grupo de investigación <b>Movimiento Corporal Humano</b>, conformado desde el año 2009, con miras a la consolidación del desarrollo teórico disciplinar dentro del marco del Movimiento Corporal Humano y sus ejes temáticos en el desarrollo de la investigaciòn formativa. De tal forma que sea posible fundamentar la disciplina, analizando e investigando sus implicaciones tanto biológicas como sociales, culturales y ambientales para desembocar en una propuesta que aporte en la discusión sobre el campo disciplinar de la fisioterapia.'>
+                                    Objetivo
+                                </button>
+                            </div>
+                            <div class="section-desc">
+                                <button type="button" class="btn btn-secondary" data-container="body"
+                                        data-toggle="popover" data-placement="right" data-trigger="focus"
+                                        data-html='true'
+                                        data-content='<ol>
+                                        <li>Educación en fisioterapia.</li>
+                                        <li>Procesos de interacción fisioterapéuticos.</li>
+                                        <li>Salud  pública y gestión social.</li></ol>'>
+                                    Líneas de Investigación
+                                </button>
+                            </div>
+                        </div>
+                        <div class="separation-line"></div>
+                        <div class="section-three">
+                            <div class="section-title">Director de Grupo</div>
+                            <div class="section-desc">
+                                <p class="director">Margareth Lorena Alfonso Mora</p>
+                                <p class="mail-address"><a href="mailto:margareth.alfonso@unisabana.edu.co">margareth.alfonso@unisabana.edu.co</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="separation-line"></div>
+                        <div class="section-four">
+                            <div class="section-title">
+                                <div class="ods">ODS</div>
+                                <div class="ods-numbers">
+                                    <div>3</div>
+                                    <div>4</div>
+                                </div>
+                            </div>
+                            <div class="section-desc">
+                                <button type="button" class="btn btn-secondary" data-container="body"
+                                        data-toggle="popover" data-placement="right" data-trigger="focus"
+                                        data-html='true'
+                                        data-content='USEFI Unisabana'>
+                                    Semilleros
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filterDiv cars">Volvo</div>
+                <div class="filterDiv colors">Red</div>
+                <div class="filterDiv cars animals">Mustang</div>
+                <div class="filterDiv colors">Blue</div>
+                <div class="filterDiv animals">Cat</div>
+                <div class="filterDiv animals">Dog</div>
+                <div class="filterDiv fruits">Melon</div>
+                <div class="filterDiv fruits animals">Kiwi</div>
+                <div class="filterDiv fruits">Banana</div>
+                <div class="filterDiv fruits">Lemon</div>
+                <div class="filterDiv animals">Cow</div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    filterSelection("all")
+
+    function filterSelection(c) {
+        var x, i;
+        x = document.getElementsByClassName("filterDiv");
+        if (c == "all") c = "";
+        for (i = 0; i < x.length; i++) {
+            w3RemoveClass(x[i], "show");
+            if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+        }
+    }
+
+    function w3AddClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+            if (arr1.indexOf(arr2[i]) == -1) {
+                element.className += " " + arr2[i];
             }
-            
-            function w3AddClass(element, name) {
-              var i, arr1, arr2;
-              arr1 = element.className.split(" ");
-              arr2 = name.split(" ");
-              for (i = 0; i < arr2.length; i++) {
-                if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
-              }
+        }
+    }
+
+    function w3RemoveClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+            while (arr1.indexOf(arr2[i]) > -1) {
+                arr1.splice(arr1.indexOf(arr2[i]), 1);
             }
-            
-            function w3RemoveClass(element, name) {
-              var i, arr1, arr2;
-              arr1 = element.className.split(" ");
-              arr2 = name.split(" ");
-              for (i = 0; i < arr2.length; i++) {
-                while (arr1.indexOf(arr2[i]) > -1) {
-                  arr1.splice(arr1.indexOf(arr2[i]), 1);     
-                }
-              }
-              element.className = arr1.join(" ");
-            }
-            
-            // Add active class to the current button (highlight it)
-            var btnContainer = document.getElementById("myBtnContainer");
-            var btns = btnContainer.getElementsByClassName("filter");
-            for (var i = 0; i < btns.length; i++) {
-              btns[i].addEventListener("click", function(){
-                var current = document.getElementsByClassName("active");
-                current[0].className = current[0].className.replace(" active", "");
-                this.className += " active";
-              });
-            }
-            </script>
-    </body>
+        }
+        element.className = arr1.join(" ");
+    }
+
+    // Add active class to the current button (highlight it)
+    var btnContainer = document.getElementById("myBtnContainer");
+    var btns = btnContainer.getElementsByClassName("filter");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function () {
+            var current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+        });
+    }
+</script>
+</body>
 </html>
