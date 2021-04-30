@@ -5,6 +5,7 @@
     text-align: center;
     margin: 20px 2px;
     display: none;
+    border-radius: 5px;
   }
   
   .show {
@@ -13,6 +14,12 @@
   
 p{
     margin: 0 !important;
+}
+.filterDiv .btn{
+    transition: color .25s ease-in-out,background-color .25s ease-in-out,border-color .25s ease-in-out,box-shadow .25s ease-in-out;
+    background-color: transparent;
+    color: black;
+    border-color: black;
 }
 
   /* Style the buttons */
@@ -35,14 +42,21 @@ p{
       text-align: center;
   }
   .name-rg .square-color{
-      background-color: gold;
       display: block;
       line-height: normal;
       width: 20px;
   }
+
+.name-rg .square-color:last-child{
+    margin-left: -3px;
+}
 .name-rg p{
     width: 400px;
-    border: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-right: 0;
+    border-left: 0;
+
 }
   .content-info{
       display: flex;
@@ -105,7 +119,7 @@ p{
 
 .ods{
     width: 30%;
-    font-size: 17px;
+    font-size: 20px;
 }
 .ods-numbers{
     width: 40%;
@@ -120,4 +134,163 @@ p{
     width: 30px;
     height: 30px;
     border: 2px solid darkcyan;
+    border-radius: 5px;
+}
+.EICEA .ods-numbers div{
+    border-color: #FF9900;
+}
+.comunicacion .ods-numbers div{
+    border-color: #818990;
+}
+.derecho .ods-numbers div{
+    border-color: #C7211D;
+}
+.enfermeria .ods-numbers div{
+    border-color: #D0D3D4;
+}
+.lenguas .ods-numbers div{
+    border-color: #8E2C48;
+}
+.CTA .ods-numbers div{
+    border-color: #D29F13;
+}
+.familia .ods-numbers div{
+    border-color: #97D700;
+}
+.medicina .ods-numbers div{
+    border-color: #FFD91C;
+}
+.ingenieria .ods-numbers div{
+    border-color: #936D47;
+}
+.filosofia .ods-numbers div{
+    border-color: #1374AA;
+}
+.educacion .ods-numbers div{
+    border-color: #68B5E2;
+}
+.psicologia .ods-numbers div{
+    border-color: #753BBD;
+}
+.comunicacion .ods-numbers div{
+    border-color: #818990;
+}
+.comunicacion .ods-numbers div{
+    border-color: #818990;
+}
+
+.EICEA .square-color{
+    background-color: #FF9900;
+}
+.comunicacion .square-color{
+    background-color: #818990;
+}
+.derecho .square-color{
+    background-color: #C7211D;
+}
+.enfermeria .square-color{
+    background-color: #D0D3D4;
+}
+.lenguas .square-color{
+    background-color: #8E2C48;
+}
+.CTA .square-color{
+    background-color: #D29F13;
+}
+.familia .square-color{
+    background-color: #97D700;
+}
+.medicina .square-color{
+    background-color: #FFD91C;
+}
+.ingenieria .square-color{
+    background-color: #936D47;
+}
+.filosofia .square-color{
+    background-color: #1374AA;
+}
+.educacion .square-color{
+    background-color: #68B5E2;
+}
+.psicologia .square-color{
+    background-color: #753BBD;
+}
+.INALDE .square-color, .clinica .square-color{
+    background-color: #000000;
+}
+.EICEA .btn:hover, .EICEA .btn:focus, .EICEA .btn:active{
+    background-color: #FF9900;
+    border-color: #FF9900;
+    color: white;
+}
+.comunicacion .btn:hover, .comunicacion .btn:focus, .comunicacion .btn:active{
+    background-color: #818990;
+    border-color: #818990;
+    color: white;
+}
+.derecho .btn:hover, .derecho .btn:focus, .derecho .btn:active{
+    background-color: #C7211D;
+    border-color: #C7211D;
+    color: white;
+}
+.enfermeria .btn:hover, .enfermeria .btn:focus, .enfermeria .btn:active{
+    background-color: #D0D3D4;
+    border-color: #D0D3D4;
+    color: white;
+}
+.lenguas .btn:hover, .lenguas .btn:focus, .lenguas .btn:active{
+    background-color: #8E2C48;
+    border-color: #8E2C48;
+    color: white;
+}
+.CTA .btn:hover, .CTA .btn:focus, .CTA .btn:active{
+    background-color: #D29F13;
+    border-color: #D29F13;
+    color: white;
+}
+.familia .btn:hover, .familia .btn:focus, .familia .btn:active{
+    background-color: #97D700;
+    border-color: #97D700;
+    color: white;
+}
+.medicina .btn:hover, .medicina .btn:focus, .medicina .btn:active{
+    background-color: #FFD91C;
+    border-color: #FFD91C;
+    color: white;
+}
+.ingenieria .btn:hover, .ingenieria .btn:focus, .ingenieria .btn:active{
+    background-color: #936D47;
+    border-color: #936D47;
+    color: white;
+}
+.filosofia .btn:hover, .filosofia .btn:focus, .filosofia .btn:active{
+    background-color: #1374AA;
+    border-color: #1374AA;
+    color: white;
+}
+.educacion .btn:hover, .educacion .btn:focus, .educacion .btn:active{
+    background-color: #68B5E2;
+    border-color: #68B5E2;
+    color: white;
+}
+.psicologia .btn:hover, .psicologia .btn:focus, .psicologia .btn:active{
+    background-color: #753BBD;
+    border-color: #753BBD;
+    color: white;
+}
+
+#select-area{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+#title-area h1{
+    font-size: 100px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bolder;
+    color: black;
+}
+#title-area h1 span{
+    font-size: 230px;
+    margin-bottom: -40px;
 }
