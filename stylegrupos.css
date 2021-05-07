@@ -215,8 +215,11 @@ p{
 .psicologia .square-color{
     background-color: #753BBD;
 }
-.INALDE .square-color, .clinica .square-color{
+.INALDE .square-color {
     background-color: #000000;
+}
+.clinica .square-color{
+    background-color: #192A67;
 }
 .EICEA .btn:hover, .EICEA .btn:focus, .EICEA .btn:active{
     background-color: #FF9900;
@@ -274,8 +277,13 @@ p{
     color: white;
 }
 .psicologia .btn:hover, .psicologia .btn:focus, .psicologia .btn:active{
-    background-color: #753BBD;
-    border-color: #753BBD;
+     background-color: #753BBD;
+     border-color: #753BBD;
+     color: white;
+ }
+.clinica .btn:hover, .clinica .btn:focus, .clinica .btn:active{
+    background-color: #192A67;
+    border-color: #192A67;
     color: white;
 }
 
@@ -285,12 +293,21 @@ p{
     justify-content: space-around;
 }
 #title-area h1{
-    font-size: 100px;
+    font-size: 75px;
     font-family: 'Roboto', sans-serif;
     font-weight: bolder;
     color: black;
+    text-align: center !important;
 }
 #title-area h1 span{
-    font-size: 230px;
+    font-size: 180px;
     margin-bottom: -40px;
+}
+p.clarification-text{
+    width: 100%;
+    margin: 10px 0 !important;
+    text-align: center;
+}
+.clarification-text a{
+    text-decoration: underline;
 }
