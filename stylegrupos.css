@@ -316,19 +316,31 @@ p.clarification-text{
     position: relative;
     bottom: 0;
     display: flex;
-    background-color: #192a67;
-    height: 60px;
-    justify-content: space-between;
+    height: 100px;
+    justify-content: space-around;
+    border-top: 3px solid #192a67;
 }
 .footer div{
-    width: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
-    font-size: 21px;
+}
+.footer .footer-images{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+}
+.footer-img1{
+    width: 260px;
+}
+.footer-img2{
+    width: 250px;
+}
+.footer-img3{
+    width: 280px;
 }
 .content-container{
-    min-height: calc(100vh - 60px);
+    min-height: calc(100vh - 100px);
     position: relative;
 }
