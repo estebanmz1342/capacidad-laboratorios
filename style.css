@@ -617,3 +617,33 @@ li{
     margin-bottom: 10px;
     font-size: 18px;
 }
+.button-container{
+    position: absolute;
+    bottom: 0;
+    right: 10%;
+}
+.living-lab.goto-research{
+    color: white;
+    width: 230px;
+    font-size: 24px;
+    font-weight: bolder;
+    border-radius: 15px ;
+    height: 75px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+.hvr-shadow{
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(10px) translateZ(0);
+    transform: perspective(10px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow;
+    transition-property: box-shadow;
+}
+.hvr-shadow:hover, .hvr-shadow:focus, .hvr-shadow:active {
+    box-shadow: 0 20px 20px -10px rgba(0, 0, 0, 0.5);
+}
