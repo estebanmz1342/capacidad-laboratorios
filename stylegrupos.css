@@ -316,20 +316,25 @@ p.clarification-text{
     position: relative;
     bottom: 0;
     display: flex;
-    height: 100px;
+    flex-wrap: wrap;
+    height: 135px;
     justify-content: space-around;
-    border-top: 3px solid #192a67;
+    border-top: 7px solid #192a67;
+    /background-color: #192a67;
 }
 .footer div{
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    font-size: 18px;
 }
 .footer .footer-images{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 60%;
+    width: 55%;
+    margin: 0 auto;
 }
 .footer-img1{
     width: 260px;
@@ -341,6 +346,6 @@ p.clarification-text{
     width: 280px;
 }
 .content-container{
-    min-height: calc(100vh - 100px);
+    min-height: calc(100vh - 135px);
     position: relative;
 }
