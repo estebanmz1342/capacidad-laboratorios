@@ -54,12 +54,13 @@ a{
     }
     .identity-logos-mobile img{
         width: 80%;
+        height: auto;
     }
     .button-container-mobile{
         display: flex !important;
         width: 100%;
         justify-content: center;
-
+        margin-bottom: 25px;
     }
 }
 .identity-logos-mobile, .button-container-mobile{
